@@ -11,14 +11,14 @@ metadata:
   title:
     default: Siete Ranas Verdes
     template: '%s - Siete Ranas Verdes'
-  description: "Bienestar consciente: yoga, banos de bosque y actividades en la naturaleza."
+  description: "Sala de Yoga y Bienestar en Navia"
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Siete Ranas Verdes
     images:
-      - url: '~/assets/images/default.png'
+      - url: '/og.jpg'
         width: 1200
         height: 628
     type: website
