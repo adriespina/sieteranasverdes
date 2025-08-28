@@ -1,15 +1,14 @@
 {
-  "css.customData": ["./vscode.tailwind.json"],
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
-  "files.associations": {
-    "*.mdx": "markdown"
-  },
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "yaml.schemas": {
-    "./.vscode/astrowind/config-schema.json": "/src/config.yaml"
-  },
-  "eslint.useFlatConfig": true
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "emmet.includeLanguages": { "astro": "html" },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": { "astro": "html" },
+  "astro.telemetry.enabled": false
 }

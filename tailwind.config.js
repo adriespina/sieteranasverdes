@@ -12,6 +12,18 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
+        brand: {
+          50: '#f2fbf5',
+          100: '#e6f7eb',
+          200: '#c9eed5',
+          300: '#a6e2ba',
+          400: '#7fd59b',
+          500: '#4fbf79',
+          600: '#36a865',
+          700: '#2b8652',
+          800: '#236a43',
+          900: '#1d5838',
+        },
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],

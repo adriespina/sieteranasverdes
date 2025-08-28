@@ -90,3 +90,10 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* Base UI utilities */
+:root { color-scheme: light; }
+body { @apply bg-white text-gray-800 font-sans; }
+a { @apply text-brand-700 hover:text-brand-800 underline underline-offset-2; }
+/* .btn exists earlier; avoid duplicate per constraints */
+.card { @apply rounded-2xl border border-gray-200 shadow-sm p-6 bg-white; }

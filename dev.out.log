@@ -1,0 +1,17 @@
+
+> @onwidget/astrowind@1.0.0-beta.52 dev
+> astro dev
+
+12:04:21 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:04:21 [types] Generated 1ms
+12:04:22 [content] Syncing content
+12:04:22 [content] Synced content
+12:04:22 [vite] Re-optimizing dependencies because lockfile has changed
+12:04:22 [vite] Port 4321 is in use, trying another one...
+
+ astro  v5.13.4 ready in 2479 ms
+
+┃ Local    http://localhost:4322/
+┃ Network  use --host to expose
+
+12:04:22 watching for file changes...
