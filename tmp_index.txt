@@ -1,0 +1,149 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layout real
+---
+<BaseLayout title="Siete Ranas Verdes · Navia" description="Yoga, Baños de Bosque y bienestar en Navia">
+  <!-- 1) Hero imagen + texto superpuesto -->
+  <section id="inicio" class="relative min-h-[80vh] grid place-items-center overflow-hidden bg-brand-100 scroll-mt-10 md:scroll-mt-12">
+    <img src="/img/general-yoga.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-3xl text-center text-white px-4" data-reveal>
+      <h1 class="text-5xl md:text-6xl font-bold drop-shadow">Bienvenid@ a Siete Ranas Verdes</h1>
+      <p class="mt-4 text-lg md:text-xl">Yoga, naturaleza y bienestar en Navia</p>
+      <a href="#contacto" class="btn mt-6">Contactar</a>
+    </div>
+  </section>
+
+  <!-- 2) Intro general con 2 imágenes -->
+  <section id="intro" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4" data-reveal>
+        <h2 class="text-3xl font-bold text-brand-900">Actividades para todos</h2>
+        <p class="text-gray-700">Yoga, pilates suave, baños de bosque y talleres para cuidar cuerpo y mente.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4" data-reveal>
+        <img src="/img/pilates-gente.jpg" class="rounded-2xl shadow" alt="Pilates" />
+        <img src="/img/yoga-3.jpg" class="rounded-2xl shadow" alt="Yoga" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) Sección Yoga, con imagen de fondo -->
+  <section id="yoga" class="relative py-24 bg-brand-50 scroll-mt-10 md:scroll-mt-12">
+    <img src="/img/yoga-gente-2.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+    <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4" data-reveal>
+        <h2 class="text-3xl font-bold text-brand-900">Yoga</h2>
+        <p class="text-gray-800/90">Hatha Yoga. Sesiones para todos los niveles.</p>
+        <p class="text-gray-800/90">Equilibrio emocional y físico mediante técnicas de respiración y corrección postural.
+          Relaja, centra la mente y libera tensión del cuerpo.</p>
+        <a class="btn" href="/yoga">Ver más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) Baños de Bosque -->
+  <section id="banos" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <img src="/img/bano-de-bosque.jpg" alt="Baños de bosque" class="rounded-2xl shadow" data-reveal/>
+      <div class="space-y-4" data-reveal>
+        <h2 class="text-3xl font-bold text-brand-900">Baños de Bosque</h2>
+        <p class="text-gray-700">Experiencias de conexión con la naturaleza para reducir estrés y mejorar el bienestar.</p>
+        <a class="btn" href="/banos-de-bosque">Descubrir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) Otras actividades (3 tarjetas) -->
+  <section id="otras" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-900 text-center mb-8" data-reveal>Otras actividades</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card" data-reveal>
+          <img src="/img/pilates-aro.jpg" alt="Pilates aro" class="rounded-xl mb-4"/>
+          <p class="text-gray-700">Pilates suave.</p>
+        </div>
+        <div class="card" data-reveal>
+          <img src="/img/relajacion-3.jpg" alt="Relajación" class="rounded-xl mb-4"/>
+          <p class="text-gray-700">Relajación y meditación guiada.</p>
+        </div>
+        <div class="card" data-reveal>
+          <img src="/img/actividad-3.jpg" alt="Taller" class="rounded-xl mb-4"/>
+          <p class="text-gray-700">Talleres y eventos puntuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) Carrusel Nuestra Sala (scroll-snap ligero) -->
+  <section id="sala" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-900 mb-6" data-reveal>Nuestra sala</h2>
+      <div class="relative" data-reveal>
+        <div id="carousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-p-6 pb-4">
+          <img src="/img/carrusel-1.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+          <img src="/img/carrusel-2.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+          <img src="/img/carrusel-3.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+          <img src="/img/carrusel-4.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+          <img src="/img/carrusel-5.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+          <img src="/img/carrusel-6.jpg" class="h-72 w-auto rounded-2xl shadow snap-center" alt="">
+        </div>
+        <div class="mt-4 flex gap-3">
+          <button class="btn" onclick="document.getElementById('carousel').scrollBy({left:-400,behavior:'smooth'})">‹</button>
+          <button class="btn" onclick="document.getElementById('carousel').scrollBy({left:400,behavior:'smooth'})">›</button>
+        </div>
+      </div>
+      <p class="text-gray-700 mt-4" data-reveal>Un espacio cálido y luminoso para practicar en grupo.</p>
+    </div>
+  </section>
+
+  <!-- Horario (una sola foto, centrada) -->
+  <section id="horario" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <img src="/img/horario.jpg" alt="Horario de clases" class="block mx-auto max-w-3xl w-full rounded-2xl shadow" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- 7) Ubicación con Google Maps -->
+  <section id="mapa" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-900 mb-6" data-reveal>Dónde estamos</h2>
+      <div class="rounded-2xl overflow-hidden shadow" data-reveal>
+        <iframe title="Mapa de Siete Ranas Verdes"
+          src="https://www.google.com/maps?q=Traves%C3%ADa%20del%20Poste,%20bajo,%20Navia&output=embed"
+          width="100%" height="360" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa">
+        </iframe>
+      </div>
+      <p class="mt-3 text-gray-700">Travesía del Poste, bajo. Navia</p>
+    </div>
+  </section>
+
+  
+
+  <!-- 8) Contacto (formulario) -->
+  <section id="contacto" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-900 mb-6" data-reveal>Contacto</h2>
+      <form action="https://formspree.io/f/mqadezoz" method="POST" class="grid gap-4" data-reveal>
+        <input class="card p-3" type="text" name="nombre" placeholder="Tu nombre" required>
+        <input class="card p-3" type="email" name="email" placeholder="Tu email" required>
+        <textarea class="card p-3" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        <button class="btn justify-center">Enviar</button>
+      </form>
+      <p class="text-sm text-gray-500 mt-3">También en <a href="mailto:hola@sieteranasverdes.com">hola@sieteranasverdes.com</a></p>
+    </div>
+  </section>
+
+  <!-- Animación leve al hacer scroll -->
+  <script is:inline>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('revealed'); }});
+    },{ threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(el=>{
+      el.classList.add('reveal'); io.observe(el);
+    });
+  </script>
+  <style is:global>
+    .reveal{ opacity:0; transform: translateY(16px); transition: all .6s ease; }
+    .reveal.revealed{ opacity:1; transform: translateY(0); }
+  </style>
+</BaseLayout>

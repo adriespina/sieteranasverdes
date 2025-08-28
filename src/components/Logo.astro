@@ -1,5 +1,10 @@
 ---
-import { SITE } from 'astrowind:config';
+import { SITE } from "astrowind:config";
 ---
 
-<img src="/logo.svg" alt={SITE?.name} class="h-12 w-12 md:h-14 md:w-14 object-contain" loading="lazy" />
+<img
+  src="/logo.svg"
+  alt={SITE?.name}
+  class="h-12 w-12 object-contain md:h-14 md:w-14"
+  loading="lazy"
+/>

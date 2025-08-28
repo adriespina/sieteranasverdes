@@ -1,44 +1,44 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
-import typographyPlugin from '@tailwindcss/typography';
+import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+import typographyPlugin from "@tailwindcss/typography";
 
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
+  content: ["./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       colors: {
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
-        default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
+        primary: "var(--aw-color-primary)",
+        secondary: "var(--aw-color-secondary)",
+        accent: "var(--aw-color-accent)",
+        default: "var(--aw-color-text-default)",
+        muted: "var(--aw-color-text-muted)",
         brand: {
-          50: '#f2fbf5',
-          100: '#e6f7eb',
-          200: '#c9eed5',
-          300: '#a6e2ba',
-          400: '#7fd59b',
-          500: '#4fbf79',
-          600: '#36a865',
-          700: '#2b8652',
-          800: '#236a43',
-          900: '#1d5838',
+          50: "#f2fbf5",
+          100: "#e6f7eb",
+          200: "#c9eed5",
+          300: "#a6e2ba",
+          400: "#7fd59b",
+          500: "#4fbf79",
+          600: "#36a865",
+          700: "#2b8652",
+          800: "#236a43",
+          900: "#1d5838",
         },
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        sans: ["var(--aw-font-sans, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--aw-font-serif, ui-serif)", ...defaultTheme.fontFamily.serif],
+        heading: ["var(--aw-font-heading, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
       },
 
       animation: {
-        fade: 'fadeInUp 1s both',
+        fade: "fadeInUp 1s both",
       },
 
       keyframes: {
         fadeInUp: {
-          '0%': { opacity: 0, transform: 'translateY(2rem)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+          "0%": { opacity: 0, transform: "translateY(2rem)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
     },
@@ -46,8 +46,8 @@ export default {
   plugins: [
     typographyPlugin,
     plugin(({ addVariant }) => {
-      addVariant('intersect', '&:not([no-intersect])');
+      addVariant("intersect", "&:not([no-intersect])");
     }),
   ],
-  darkMode: 'class',
+  darkMode: "class",
 };

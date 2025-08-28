@@ -1,15 +1,20 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
 
-const metadata = { title: 'Yoga' };
+const metadata = { title: "Yoga" };
 ---
 
 <Layout metadata={metadata}>
   <section class="py-16 md:py-24">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-brand-700">Yoga</h1>
-      <p class="text-lg text-muted mb-8">Prácticas de yoga para el bienestar y equilibrio.</p>
-      <img src="/img/yoga-hero.jpg" alt="Sesión de yoga" class="w-full rounded-2xl shadow-lg" loading="eager" />
+    <div class="container mx-auto max-w-5xl px-6">
+      <h1 class="mb-4 text-4xl font-bold text-brand-700 md:text-5xl">Yoga</h1>
+      <p class="mb-8 text-lg text-muted">Prácticas de yoga para el bienestar y equilibrio.</p>
+      <img
+        src="/img/yoga-hero.jpg"
+        alt="Sesión de yoga"
+        class="w-full rounded-2xl shadow-lg"
+        loading="eager"
+      />
     </div>
   </section>
 </Layout>

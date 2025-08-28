@@ -22,11 +22,11 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+    @apply text-page inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base font-medium leading-snug transition duration-200 ease-in hover:border-gray-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200 dark:border-slate-500 dark:text-slate-300 dark:hover:border-slate-800 dark:hover:bg-slate-800 md:px-8;
   }
 
   .btn-primary {
-    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+    @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-white dark:border-primary dark:bg-primary dark:text-white dark:hover:border-secondary dark:hover:bg-secondary;
   }
 
   .btn-secondary {
@@ -34,7 +34,7 @@
   }
 
   .btn-tertiary {
-    @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+    @apply btn border-none text-muted shadow-none hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
 }
 
@@ -44,7 +44,7 @@
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
+  @apply bg-page border-b border-gray-500/20 md:bg-[#030621e6];
   box-shadow: none;
 }
 /* #header.scroll > div:last-child {
@@ -78,11 +78,11 @@
   @apply transition;
 }
 [data-aw-toggle-menu].expanded g > path:first-child {
-  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+  @apply translate-x-[-3px] translate-y-[15px] -rotate-45;
 }
 
 [data-aw-toggle-menu].expanded g > path:last-child {
-  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+  @apply translate-x-[14px] translate-y-[-8px] rotate-45;
 }
 
 /* To deprecated */
@@ -92,10 +92,29 @@
 }
 
 /* Base UI utilities */
-:root { color-scheme: light; }
-body { @apply bg-white text-gray-800 font-sans; }
-a { @apply text-brand-700 hover:text-brand-800 underline underline-offset-2; }
+:root {
+  color-scheme: light;
+}
+body {
+  @apply bg-white font-sans text-gray-800;
+}
+a {
+  @apply text-brand-700 underline underline-offset-2 hover:text-brand-800;
+}
 /* .btn exists earlier; avoid duplicate per constraints */
-.card { @apply rounded-2xl border border-gray-200 shadow-sm p-6 bg-white; }
+.card {
+  @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm;
+}
 /* Brand button override */
-.btn { @apply inline-flex items-center rounded-2xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700 shadow-sm; }
+.btn {
+  @apply inline-flex items-center rounded-2xl bg-brand-600 px-4 py-2 text-white shadow-sm hover:bg-brand-700;
+}
+
+/* Utilidad simple de proporción 4:3 (sin plugin) */
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+/* Utilidades de proporción sin plugin */
+.aspect-3-2 {
+  aspect-ratio: 3 / 2;
+}
