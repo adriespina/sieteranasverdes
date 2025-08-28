@@ -2,11 +2,11 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    { text: 'Yoga', href: getPermalink('/#yoga') },
-    { text: 'Baños de Bosque', href: getPermalink('/#banos') },
-    { text: 'Otras actividades', href: getPermalink('/#otras') },
-    { text: 'Nuestra Sala', href: getPermalink('/#sala') },
-    { text: 'Contacto', href: getPermalink('/#contacto') },
+    { text: 'Yoga', href: getPermalink('/yoga') },
+    { text: 'Baños de Bosque', href: getPermalink('/banos-de-bosque') },
+    { text: 'Otras actividades', href: getPermalink('/otras-actividades') },
+    { text: 'Vanessa', href: getPermalink('/vanessa') },
+    { text: 'Nuestra Sala', href: getPermalink('/el-local') },
     { text: 'Blog', href: getBlogPermalink() },
   ],
   actions: [{ text: 'Socios', href: getPermalink('/socios') }],
@@ -71,7 +71,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> — All rights reserved.
+    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
   `,
 };
-
