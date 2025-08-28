@@ -8,7 +8,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="relative max-w-3xl text-center text-white px-4" data-reveal>
       <h1 class="text-5xl md:text-6xl font-bold drop-shadow">Bienvenid@ a Siete Ranas Verdes</h1>
-      <p class="mt-4 text-lg md:text-xl">Yoga, naturaleza y tranquilidad en Navia</p>
+      <p class="mt-4 text-lg md:text-xl">Yoga, naturaleza y salud en Navia</p>
       <a href="#contacto" class="btn mt-6">Contactar</a>
     </div>
   </section>
@@ -18,7 +18,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-4" data-reveal>
         <h2 class="text-3xl font-bold text-brand-900">Actividades para todos</h2>
-        <p class="text-gray-700">Yoga, pilates, baños de bosque y talleres para cuidar cuerpo y mente.</p>
+        <p class="text-gray-700">Yoga, pilates suave, baños de bosque y talleres para cuidar cuerpo y mente.</p>
       </div>
       <div class="grid grid-cols-2 gap-4" data-reveal>
         <img src="/img/pilates-gente.jpg" class="rounded-2xl shadow" alt="Pilates" />
@@ -33,7 +33,9 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-4" data-reveal>
         <h2 class="text-3xl font-bold text-brand-900">Yoga</h2>
-        <p class="text-gray-800/90">Sesiones para todos los niveles: respiración, alineación y calma.</p>
+        <p class="text-gray-800/90">Hatha Yoga. Sesiones para todos los niveles.</p>
+        <p class="text-gray-800/90">Equilibrio emocional y físico mediante técnicas de respiración y corrección postural.
+          Relaja, centra la mente y libera tensión del cuerpo.</p>
         <a class="btn" href="/yoga">Ver más</a>
       </div>
     </div>
@@ -58,7 +60,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card" data-reveal>
           <img src="/img/pilates-aro.jpg" alt="Pilates aro" class="rounded-xl mb-4"/>
-          <p class="text-gray-700">Pilates con aro y material.</p>
+          <p class="text-gray-700">Pilates suave.</p>
         </div>
         <div class="card" data-reveal>
           <img src="/img/relajacion-3.jpg" alt="Relajación" class="rounded-xl mb-4"/>
@@ -90,7 +92,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
           <button class="btn" onclick="document.getElementById('carousel').scrollBy({left:400,behavior:'smooth'})">›</button>
         </div>
       </div>
-      <p class="text-gray-700 mt-4" data-reveal>Un espacio cálido y luminoso para practicar con calma.</p>
+      <p class="text-gray-700 mt-4" data-reveal>Un espacio cálido y luminoso para practicar en grupo.</p>
     </div>
   </section>
 
@@ -108,11 +110,19 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     </div>
   </section>
 
+  <!-- Horario (una sola foto) -->
+  <section id="horario" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-900 mb-6">Horario</h2>
+      <img src="/img/horario.jpg" alt="Horario de clases" class="w-full rounded-2xl shadow" loading="lazy" />
+    </div>
+  </section>
+
   <!-- 8) Contacto (formulario) -->
   <section id="contacto" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
     <div class="max-w-3xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-brand-900 mb-6" data-reveal>Contacto</h2>
-      <form action="https://formspree.io/f/REEMPLAZA_ID" method="POST" class="grid gap-4" data-reveal>
+      <form action="https://formspree.io/f/mqadezoz" method="POST" class="grid gap-4" data-reveal>
         <input class="card p-3" type="text" name="nombre" placeholder="Tu nombre" required>
         <input class="card p-3" type="email" name="email" placeholder="Tu email" required>
         <textarea class="card p-3" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
