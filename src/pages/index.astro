@@ -8,7 +8,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="relative max-w-3xl text-center text-white px-4" data-reveal>
       <h1 class="text-5xl md:text-6xl font-bold drop-shadow">Bienvenid@ a Siete Ranas Verdes</h1>
-      <p class="mt-4 text-lg md:text-xl">Yoga, naturaleza y salud en Navia</p>
+      <p class="mt-4 text-lg md:text-xl">Yoga, naturaleza y bienestar en Navia</p>
       <a href="#contacto" class="btn mt-6">Contactar</a>
     </div>
   </section>
@@ -96,6 +96,13 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     </div>
   </section>
 
+  <!-- Horario (una sola foto, centrada) -->
+  <section id="horario" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <img src="/img/horario.jpg" alt="Horario de clases" class="block mx-auto max-w-3xl w-full rounded-2xl shadow" loading="lazy" />
+    </div>
+  </section>
+
   <!-- 7) Ubicación con Google Maps -->
   <section id="mapa" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
     <div class="max-w-6xl mx-auto px-4">
@@ -110,13 +117,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'; // ajusta la ruta a tu layo
     </div>
   </section>
 
-  <!-- Horario (una sola foto) -->
-  <section id="horario" class="bg-brand-50 py-16 scroll-mt-10 md:scroll-mt-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-brand-900 mb-6">Horario</h2>
-      <img src="/img/horario.jpg" alt="Horario de clases" class="w-full rounded-2xl shadow" loading="lazy" />
-    </div>
-  </section>
+  
 
   <!-- 8) Contacto (formulario) -->
   <section id="contacto" class="bg-white py-16 scroll-mt-10 md:scroll-mt-12">
