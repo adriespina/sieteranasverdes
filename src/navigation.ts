@@ -6,6 +6,7 @@ export const headerData = {
     { text: 'Baños de Bosque', href: getPermalink('/#banos') },
     { text: 'Otras actividades', href: getPermalink('/#otras') },
     { text: 'Nuestra Sala', href: getPermalink('/#sala') },
+    { text: 'Horario', href: getPermalink('/#horario') },
     { text: 'Contacto', href: getPermalink('/#contacto') },
     { text: 'Blog', href: getBlogPermalink() },
   ],
@@ -74,4 +75,3 @@ export const footerData = {
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> — All rights reserved.
   `,
 };
-
