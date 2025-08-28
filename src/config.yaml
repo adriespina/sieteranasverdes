@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Siete Ranas Verdes
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Siete Ranas Verdes
+    template: '%s - Siete Ranas Verdes'
+  description: "Bienestar consciente: yoga, banos de bosque y actividades en la naturaleza."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Siete Ranas Verdes
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -28,7 +28,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: es-ES
   textDirection: ltr
 
 apps:

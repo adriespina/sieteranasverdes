@@ -10,5 +10,6 @@
   "emmet.includeLanguages": { "astro": "html" },
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.includeLanguages": { "astro": "html" },
-  "astro.telemetry.enabled": false
+  "astro.telemetry.enabled": false,
+  "chatgpt.openOnStartup": true
 }

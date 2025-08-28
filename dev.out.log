@@ -15,3 +15,52 @@
 ┃ Network  use --host to expose
 
 12:04:22 watching for file changes...
+12:42:08 Configuration file updated. Restarting...
+12:42:08 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:42:08 [vite] Re-optimizing dependencies because lockfile has changed
+12:42:09 [content] Syncing content
+12:42:09 [content] Synced content
+12:42:09 [types] Generated 740ms
+12:42:09 [vite] Re-optimizing dependencies because vite config has changed
+12:42:12 Configuration file updated. Restarting...
+12:42:12 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:42:12 [vite] Re-optimizing dependencies because vite config has changed
+12:42:13 [content] Syncing content
+12:42:13 [content] Synced content
+12:42:13 [types] Generated 647ms
+12:42:13 [vite] Re-optimizing dependencies because vite config has changed
+12:42:37 Configuration file updated. Restarting...
+12:42:38 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:42:38 [vite] Re-optimizing dependencies because vite config has changed
+12:42:38 [content] Syncing content
+12:42:38 [content] Synced content
+12:42:38 [types] Generated 754ms
+12:42:38 [vite] Re-optimizing dependencies because vite config has changed
+12:42:43 Configuration file updated. Restarting...
+12:42:43 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:42:44 [vite] Re-optimizing dependencies because vite config has changed
+12:42:44 [content] Syncing content
+12:42:44 [content] Synced content
+12:42:44 [types] Generated 603ms
+12:42:44 [vite] Re-optimizing dependencies because vite config has changed
+12:42:46 Configuration file updated. Restarting...
+12:42:47 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:42:47 [vite] Re-optimizing dependencies because vite config has changed
+12:42:47 [content] Syncing content
+12:42:47 [content] Synced content
+12:42:47 [types] Generated 682ms
+12:42:47 [vite] Re-optimizing dependencies because vite config has changed
+12:47:59 Configuration file updated. Restarting...
+12:48:00 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:48:00 [vite] Re-optimizing dependencies because vite config has changed
+12:48:00 [content] Syncing content
+12:48:00 [content] Synced content
+12:48:00 [types] Generated 686ms
+12:48:00 [vite] Re-optimizing dependencies because vite config has changed
+12:48:23 Configuration file updated. Restarting...
+12:48:23 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+12:48:23 [vite] Re-optimizing dependencies because vite config has changed
+12:48:24 [content] Syncing content
+12:48:24 [content] Synced content
+12:48:24 [types] Generated 671ms
+12:48:24 [vite] Re-optimizing dependencies because vite config has changed
