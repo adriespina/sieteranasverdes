@@ -17,7 +17,7 @@ export default [
 
   // Reglas de Astro (incluye parser y mejores prácticas)
   ...astro.configs['flat/recommended'],
-  // Accesibilidad en componentes HTML/JSX usados en Astro
+  // Accesibilidad (requiere eslint-plugin-jsx-a11y)
   ...astro.configs['flat/jsx-a11y-recommended'],
 
   // Desactiva reglas que chocan con Prettier

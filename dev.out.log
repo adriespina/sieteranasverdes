@@ -71,3 +71,13 @@
 13:15:50 [content] Synced content
 13:15:50 [types] Generated 837ms
 13:15:50 [vite] Re-optimizing dependencies because vite config has changed
+13:45:00 Configuration file updated. Restarting...
+13:45:00 [astrowind] Astrowind `./src/config.yaml` has been loaded.
+13:45:01 [vite] Re-optimizing dependencies because lockfile has changed
+13:45:02 [content] Syncing content
+13:45:02 [content] Astro config changed
+13:45:02 [content] Astro version changed
+13:45:02 [content] Clearing content store
+13:45:03 [content] Synced content
+13:45:03 [types] Generated 2.37s
+13:45:03 [vite] Re-optimizing dependencies because vite config has changed
