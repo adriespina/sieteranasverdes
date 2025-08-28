@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
-import { SITE } from 'astrowind:config';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 
@@ -70,7 +69,6 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="inline-flex items-center gap-4 no-underline" href={getHomePermalink()}>
         <Logo />
-        <span class="font-semibold text-lg md:text-xl text-brand-900">{SITE?.name}</span>
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
