@@ -1,15 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: 'El local' };
+const metadata = { title: 'Nuestra Sala' };
 ---
 
 <Layout metadata={metadata}>
   <section class="py-16 md:py-24">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">El local</h1>
-      <p class="text-lg text-muted">Nuestro espacio para clases, talleres y encuentros.</p>
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-brand-700">Nuestra Sala</h1>
+      <p class="text-lg text-muted mb-8">Nuestro espacio para clases, talleres y encuentros.</p>
+      <img src="/img/el-local-hero.jpg" alt="Nuestra sala" class="w-full rounded-2xl shadow-lg" loading="eager" />
     </div>
   </section>
 </Layout>
-
