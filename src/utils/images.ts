@@ -78,6 +78,16 @@ export const adaptOpenGraphImages = async (
 
         if (
           typeof resolvedImage === 'string' &&
+          resolvedImage.startsWith('/')
+        ) {
+          // Absolute public path: return as-is without optimization
+          return {
+            url: resolvedImage,
+            width: typeof image?.width === 'number' ? image.width : defaultWidth,
+            height: typeof image?.height === 'number' ? image.height : defaultHeight,
+          };
+        } else if (
+          typeof resolvedImage === 'string' &&
           (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) &&
           isUnpicCompatible(resolvedImage)
         ) {
