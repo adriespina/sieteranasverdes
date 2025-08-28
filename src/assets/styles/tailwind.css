@@ -97,3 +97,5 @@ body { @apply bg-white text-gray-800 font-sans; }
 a { @apply text-brand-700 hover:text-brand-800 underline underline-offset-2; }
 /* .btn exists earlier; avoid duplicate per constraints */
 .card { @apply rounded-2xl border border-gray-200 shadow-sm p-6 bg-white; }
+/* Brand button override */
+.btn { @apply inline-flex items-center rounded-2xl px-4 py-2 bg-brand-600 text-white hover:bg-brand-700 shadow-sm; }
