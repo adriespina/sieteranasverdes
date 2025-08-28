@@ -316,26 +316,50 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
         <button class="btn justify-center">Enviar</button>
       </form>
 
-      <!-- Instagram -->
-      <p class="mt-3 flex items-center gap-2 text-sm text-gray-500" data-reveal>
-        También a través de
-        <a
-          class="inline-flex items-center gap-2 text-brand-700 no-underline hover:text-brand-800"
-          href="https://www.instagram.com/siete_ranas_verdes"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram de Siete Ranas Verdes"
-        >
-          <!-- Icono Instagram en línea (usa currentColor). Si se ve pequeño, cambia a h-6 w-6 -->
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
-            <path
-              fill="currentColor"
-              d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM17.5 6a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
-            ></path>
-          </svg>
-          <span>@siete_ranas_verdes</span>
-        </a>
-      </p>
+      <!-- Redes y teléfono (tamaño mayor) -->
+      <div class="mt-4 space-y-3 text-base leading-relaxed text-gray-600 md:text-lg" data-reveal>
+        <!-- Instagram -->
+        <p class="flex items-center gap-2">
+          También a través de
+          <a
+            class="inline-flex items-center gap-2 font-medium text-brand-700 no-underline hover:text-brand-800"
+            href="https://www.instagram.com/siete_ranas_verdes"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram de Siete Ranas Verdes"
+          >
+            <!-- Icono Instagram ajustado al tamaño del texto -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="h-[1.25em] w-[1.25em] align-middle">
+              <path
+                fill="currentColor"
+                d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM17.5 6a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+              ></path>
+            </svg>
+            <span>@siete_ranas_verdes</span>
+          </a>
+        </p>
+
+        <!-- WhatsApp -->
+        <p class="flex items-center gap-2">
+          y a través de
+          <a
+            class="inline-flex items-center gap-2 font-medium text-brand-700 no-underline hover:text-brand-800"
+            href="https://wa.me/34635601842"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp 635601842"
+          >
+            <!-- Icono WhatsApp ajustado al tamaño del texto -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="h-[1.25em] w-[1.25em] align-middle">
+              <path
+                fill="currentColor"
+                d="M12.004 2.002c-5.52 0-9.998 4.477-9.998 9.998 0 1.763.466 3.441 1.272 4.886L2 22l5.27-1.232c1.39.76 2.98 1.195 4.733 1.195 5.52 0 9.998-4.477 9.998-9.998s-4.477-9.998-9.998-9.998zm5.468 12.38c.082.141.2.435.114.924-.081.462-.376 1.29-1.6 1.84-1.22.548-2.626.43-4.39-.173-2.286-.787-4.33-3.209-4.66-3.647-.33-.437-1.11-1.48-1.11-2.827 0-1.347.703-2.001.952-2.28.248-.279.548-.348.73-.348.182 0 .365 0 .524.01.168.008.394-.065.616.469.22.531.747 1.832.814 1.966.066.134.11.29.021.468-.087.18-.132.29-.26.447-.13.158-.273.354-.39.476-.13.13-.264.27-.114.529.153.26.68 1.118 1.456 1.81 1.003.895 1.85 1.18 2.11 1.31.26.132.412.115.566-.067.153-.182.653-.758.828-1.018.173-.26.347-.217.58-.13.236.086 1.5.707 1.758.833.26.126.433.19.498.298z"
+              ></path>
+            </svg>
+            <span>WhatsApp 635601842</span>
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
