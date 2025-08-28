@@ -3,14 +3,13 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Yoga', href: getPermalink('/yoga') },
-    { text: 'Baños de bosque', href: getPermalink('/banos-de-bosque') },
+    { text: 'Baños de Bosque', href: getPermalink('/banos-de-bosque') },
     { text: 'Otras actividades', href: getPermalink('/otras-actividades') },
     { text: 'Vanessa', href: getPermalink('/vanessa') },
-    { text: 'El local', href: getPermalink('/el-local') },
+    { text: 'Nuestra Sala', href: getPermalink('/el-local') },
     { text: 'Blog', href: getBlogPermalink() },
-    { text: 'Socios', href: getPermalink('/socios') },
   ],
-  actions: [],
+  actions: [{ text: 'Socios', href: getPermalink('/socios') }],
 };
 
 export const footerData = {
