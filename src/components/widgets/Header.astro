@@ -1,27 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
-import Logo from "~/components/Logo.astro";
 import ToggleMenu from "~/components/common/ToggleMenu.astro";
 import Button from "~/components/ui/Button.astro";
 
-import { getHomePermalink } from "~/utils/permalinks";
-import { trimSlash } from "~/utils/permalinks";
+// Removed unused imports (brand/link mapping now inline)
 import type { CallToAction } from "~/types";
-
-interface Link {
-  text?: string;
-  href?: string;
-  ariaLabel?: string;
-  icon?: string;
-}
-
-interface MenuLink extends Link {
-  links?: Array<MenuLink>;
-}
 
 export interface Props {
   id?: string;
-  links?: Array<MenuLink>;
   actions?: Array<CallToAction>;
   isSticky?: boolean;
   isDark?: boolean;
@@ -32,15 +17,12 @@ export interface Props {
 
 const {
   id = "header",
-  links = [],
   actions = [],
   isSticky = false,
   isDark = false,
   isFullWidth = false,
   position = "center",
 } = Astro.props;
-
-const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
 <header
@@ -72,65 +54,73 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         "flex justify-between",
       ]}
     >
-      <a class="inline-flex items-center gap-4 no-underline" href={getHomePermalink()}>
-        <Logo />
+      <a href="/" class="inline-flex items-center gap-4 no-underline">
+        <img
+          src="/logo.svg?v=4"
+          alt="Siete Ranas Verdes"
+          class="h-14 w-14 object-contain md:h-16 md:w-16"
+        />
+        <span class="text-xl font-bold text-brand-900 md:text-2xl">Siete Ranas Verdes</span>
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
       </div>
     </div>
     <nav
-      class="hidden w-full items-center overflow-y-auto overflow-x-hidden text-default md:mx-5 md:flex md:w-auto md:justify-self-center md:overflow-x-auto md:overflow-y-visible"
+      class="hidden items-center overflow-visible md:mx-5 md:flex md:w-auto md:justify-self-center"
       aria-label="Main navigation"
     >
-      <ul
-        class="flex w-full flex-col text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:justify-center md:self-center md:text-[0.9375rem]"
-      >
-        {
-          links.map(({ text, href, links }) => (
-            <li class={links?.length ? "dropdown" : ""}>
-              {links?.length ? (
-                <>
-                  <button
-                    type="button"
-                    class="hover:text-link flex items-center whitespace-nowrap px-4 py-3 dark:hover:text-white"
-                  >
-                    {text}{" "}
-                    <Icon
-                      name="tabler:chevron-down"
-                      class="ml-0.5 hidden h-3.5 w-3.5 md:inline rtl:ml-0 rtl:mr-0.5"
-                    />
-                  </button>
-                  <ul class="dropdown-menu dark:md:bg-dark rounded pl-4 font-medium drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md">
-                    {links.map(({ text: text2, href: href2 }) => (
-                      <li>
-                        <a
-                          class:list={[
-                            "hover:text-link whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-gray-100",
-                            { "aw-link-active": href2 === currentPath },
-                          ]}
-                          href={href2}
-                        >
-                          {text2}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <a
-                  class:list={[
-                    "hover:text-link flex items-center whitespace-nowrap px-4 py-3 dark:hover:text-white",
-                    { "aw-link-active": href === currentPath },
-                  ]}
-                  href={href}
-                >
-                  {text}
-                </a>
-              )}
-            </li>
-          ))
-        }
+      <ul class="hidden items-center gap-5 md:flex">
+        <!-- Menú: Actividades -->
+        <li class="relative">
+          <details class="group">
+            <summary
+              tabindex="0"
+              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-gray-700 hover:text-brand-800"
+            >
+              Actividades
+              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
+            </summary>
+            <div
+              class="absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
+            >
+              <a href="/#yoga" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Yoga</a>
+              <a href="/#banos" class="block rounded-lg px-3 py-2 hover:bg-brand-50"
+                >Baños de Bosque</a
+              >
+              <a href="/#pilates" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Pilates</a>
+              <a href="/#otras" class="block rounded-lg px-3 py-2 hover:bg-brand-50"
+                >Otras actividades</a
+              >
+            </div>
+          </details>
+        </li>
+
+        <!-- Menú: Nuestra sala -->
+        <li class="relative">
+          <details class="group">
+            <summary
+              tabindex="0"
+              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-gray-700 hover:text-brand-800"
+            >
+              Nuestra sala
+              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
+            </summary>
+            <div
+              class="absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
+            >
+              <a href="/#sala" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Nuestra sala</a>
+              <a href="/#horario" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Horario</a>
+            </div>
+          </details>
+        </li>
+
+        <!-- Enlaces restantes -->
+        <li><a href="/#contacto" class="text-gray-700 hover:text-brand-800">Contacto</a></li>
+        <li><a href="/blog" class="text-gray-700 hover:text-brand-800">Blog</a></li>
+
+        <!-- CTA (duplicado aquí para mantener estructura; el real sigue a la derecha) -->
+        <li class="md:hidden"><a href="/socios" class="btn no-underline">Socios</a></li>
       </ul>
     </nav>
     <div
@@ -159,3 +149,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+<style is:global>
+  summary.nav-dd::-webkit-details-marker {
+    display: none;
+  }
+  /* Ensure header stacking for dropdowns */
+  header {
+    position: relative;
+  }
+</style>
