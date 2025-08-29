@@ -88,6 +88,31 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     </div>
   </section>
 
+  <!-- Pilates (fondo claro y difuminado, estilo similar a Yoga) -->
+  <section id="pilates" class="relative scroll-mt-16 bg-brand-50 py-24">
+    <!-- Imagen de fondo: clara + blur -->
+    <img
+      src="/img/pilates1.jpg"
+      alt=""
+      class="brightness-115 saturate-105 absolute inset-0 h-full w-full object-cover opacity-50 blur-[2px]"
+      loading="lazy"
+    />
+    <!-- Velo para mejorar lectura -->
+    <div class="absolute inset-0 bg-white/35 backdrop-blur-[1.5px]"></div>
+
+    <!-- Contenido -->
+    <div class="relative mx-auto max-w-6xl px-4">
+      <div class="max-w-2xl space-y-4" data-reveal>
+        <h2 class="text-3xl font-bold text-brand-900">Pilates Suave</h2>
+        <p class="text-gray-800/90">
+          Mejora la fuerza del centro (core), la movilidad y la postura. El trabajo es consciente,
+          fluido y respetuoso con el cuerpo, integrando respiración y alineación para reducir
+          tensiones y ganar estabilidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- 5) Otras actividades (grid 2×2, imágenes grandes) -->
   <section id="otras" class="scroll-mt-10 bg-brand-50 py-16 md:scroll-mt-12">
     <div class="mx-auto max-w-5xl px-4">

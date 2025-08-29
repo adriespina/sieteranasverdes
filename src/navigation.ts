@@ -3,6 +3,7 @@ import { getPermalink, getBlogPermalink, getAsset } from "./utils/permalinks";
 export const headerData = {
   links: [
     { text: "Yoga", href: getPermalink("/#yoga") },
+    { text: "Pilates", href: getPermalink("/#pilates") },
     { text: "Baños de Bosque", href: getPermalink("/#banos") },
     { text: "Otras actividades", href: getPermalink("/#otras") },
     { text: "Nuestra Sala", href: getPermalink("/#sala") },
