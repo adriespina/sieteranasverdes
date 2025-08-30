@@ -1,4 +1,4 @@
----
+﻿---
 import ToggleMenu from "~/components/common/ToggleMenu.astro";
 import Button from "~/components/ui/Button.astro";
 
@@ -54,13 +54,12 @@ const {
         "flex justify-between",
       ]}
     >
-      <a href="/" class="inline-flex items-center gap-4 no-underline">
+      <a href="/" class="inline-flex items-center gap-3 no-underline">
         <img
-          src="/logo.svg?v=4"
+          src="/logo.svg?v=5"
           alt="Siete Ranas Verdes"
-          class="h-14 w-14 object-contain md:h-16 md:w-16"
+          class="h-16 w-16 object-contain md:h-20 md:w-20"
         />
-        <span class="text-xl font-bold text-brand-900 md:text-2xl">Siete Ranas Verdes</span>
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -70,26 +69,38 @@ const {
       class="hidden items-center overflow-visible md:mx-5 md:flex md:w-auto md:justify-self-center"
       aria-label="Main navigation"
     >
-      <ul class="hidden items-center gap-5 md:flex">
+      <ul class="hidden items-center gap-6 md:flex">
         <!-- Menú: Actividades -->
         <li class="relative">
           <details class="group">
             <summary
               tabindex="0"
-              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-gray-700 hover:text-brand-800"
+              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-base text-gray-700 hover:text-brand-800 md:text-lg"
             >
               Actividades
               <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
             </summary>
             <div
-              class="absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
+              class="dropdown-panel absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
             >
-              <a href="/#yoga" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Yoga</a>
-              <a href="/#banos" class="block rounded-lg px-3 py-2 hover:bg-brand-50"
+              <a
+                href="/#yoga"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
+                >Yoga</a
+              >
+              <a
+                href="/#banos"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
                 >Baños de Bosque</a
               >
-              <a href="/#pilates" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Pilates</a>
-              <a href="/#otras" class="block rounded-lg px-3 py-2 hover:bg-brand-50"
+              <a
+                href="/#pilates"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
+                >Pilates</a
+              >
+              <a
+                href="/#otras"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
                 >Otras actividades</a
               >
             </div>
@@ -101,23 +112,40 @@ const {
           <details class="group">
             <summary
               tabindex="0"
-              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-gray-700 hover:text-brand-800"
+              class="nav-dd inline-flex cursor-pointer select-none items-center gap-1 text-base text-gray-700 hover:text-brand-800 md:text-lg"
             >
               Nuestra sala
               <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
             </summary>
             <div
-              class="absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
+              class="dropdown-panel absolute left-0 z-50 mt-2 w-56 rounded-xl border bg-white p-2 shadow-lg ring-1 ring-black/5"
             >
-              <a href="/#sala" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Nuestra sala</a>
-              <a href="/#horario" class="block rounded-lg px-3 py-2 hover:bg-brand-50">Horario</a>
+              <a
+                href="/#sala"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
+                >Nuestra sala</a
+              >
+              <a
+                href="/#horario"
+                class="block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
+                >Horario</a
+              >
             </div>
           </details>
         </li>
 
         <!-- Enlaces restantes -->
-        <li><a href="/#contacto" class="text-gray-700 hover:text-brand-800">Contacto</a></li>
-        <li><a href="/blog" class="text-gray-700 hover:text-brand-800">Blog</a></li>
+        <li>
+          <a
+            href="/#contacto"
+            class="text-base text-gray-700 no-underline hover:text-brand-800 md:text-lg"
+            >Contacto</a>
+        </li>
+        <li>
+          <a
+            href="/blog"
+            class="text-base text-gray-700 no-underline hover:text-brand-800 md:text-lg">Blog</a>
+        </li>
 
         <!-- CTA (duplicado aquí para mantener estructura; el real sigue a la derecha) -->
         <li class="md:hidden"><a href="/socios" class="btn no-underline">Socios</a></li>
@@ -149,11 +177,47 @@ const {
     </div>
   </div>
 </header>
+<!-- Script: dropdowns exclusivos y cierre al hacer click fuera / seleccionar / ESC -->
+<script is:inline>
+  const header = document.currentScript?.closest("header") || document;
+  const nav = header.querySelector("nav") || header;
+
+  const allDetails = () => Array.from(nav.querySelectorAll("details"));
+  const closeAll = (except = null) => {
+    allDetails().forEach((d) => {
+      if (d !== except) d.removeAttribute("open");
+    });
+  };
+
+  document.addEventListener("click", (e) => {
+    const t = e.target;
+    const current = t?.closest?.("details");
+    const clickedSummary = !!t?.closest?.("summary");
+    const insidePanel = !!t?.closest?.(".dropdown-panel");
+    const clickedPanelLink = !!t?.closest?.(".dropdown-panel a");
+
+    if (clickedPanelLink) {
+      closeAll();
+      return;
+    }
+    if (clickedSummary) {
+      closeAll(current);
+      return;
+    }
+    if (!insidePanel) {
+      closeAll();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+</script>
+
 <style is:global>
   summary.nav-dd::-webkit-details-marker {
     display: none;
   }
-  /* Ensure header stacking for dropdowns */
   header {
     position: relative;
   }
