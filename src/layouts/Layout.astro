@@ -24,6 +24,30 @@ export interface Props {
 
 const { metadata = {} } = Astro.props;
 const { textDirection } = I18N;
+
+const fallbackTitle = "Siete Ranas Verdes · Navia";
+const fallbackDesc = "Yoga, Baños de Bosque y bienestar en Navia.";
+const fallbackImage = "/circuloverde.png";
+
+type MetaSubset = {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+};
+const m = metadata as MetaSubset;
+// Pull values from metadata if present
+const title = m?.title ?? fallbackTitle;
+const description = m?.description ?? fallbackDesc;
+const image = m?.image ?? fallbackImage;
+const canonical = m?.canonical;
+const noindex = m?.noindex ?? false;
+
+// Compute site/url with proper fallback
+const site = Astro.site ?? new URL("https://sieteranasverdes.es");
+const url = new URL(Astro.url.pathname, site);
+const ogImage = new URL(image, site).toString();
 ---
 
 <!doctype html>
@@ -49,6 +73,71 @@ const { textDirection } = I18N;
       imagesizes="100vw"
       type="image/webp"
     />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={(canonical ?? url.toString())} />
+
+    <!-- Robots -->
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow" />
+    )}
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1f7a45" />
+
+    <!-- Keywords (informativo) -->
+    <meta
+      name="keywords"
+      content="yoga, baños de bosque, navia, asturias, respiración, pilates, bienestar, consciencia"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Siete Ranas Verdes" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url.toString()} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Siete Ranas Verdes" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script is:inline type="application/ld+json">
+      {JSON.stringify(
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Siete Ranas Verdes",
+          url: site.toString(),
+          image: ogImage,
+          telephone: "+34 635601842",
+          email: "hola@sieteranasverdes.com",
+          sameAs: ["https://www.instagram.com/siete_ranas_verdes"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Travesía del Poste, 1, Bajo",
+            addressLocality: "Navia",
+            addressRegion: "Asturias",
+            addressCountry: "ES",
+          },
+          areaServed: "Navia, Asturias, España",
+          keywords:
+            "yoga, baños de bosque, navia, asturias, respiración, pilates, bienestar, consciencia",
+        },
+        null,
+        2,
+      )}
+    </script>
   </head>
 
   <body class="bg-page tracking-tight text-default antialiased">
