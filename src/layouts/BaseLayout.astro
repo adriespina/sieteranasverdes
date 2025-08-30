@@ -5,10 +5,29 @@ import type { MetaData } from "~/types";
 export interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props as Props;
-const metadata: MetaData = { title, description } as MetaData;
+// Valores por defecto para SEO
+const {
+  title = "Siete Ranas Verdes · Navia",
+  description = "Yoga, Baños de Bosque y bienestar en Navia.",
+  image = "/img/og-default.jpg", // ← usar OG por defecto
+  canonical,
+  noindex = false,
+} = Astro.props as Props;
+
+const metadata: MetaData = {
+  title,
+  description,
+  // Estas propiedades serán leídas por el layout base
+  // que calcula las meta etiquetas (og/twitter)
+  image,
+  canonical,
+  noindex,
+} as MetaData;
 ---
 
 <PageLayout metadata={metadata}>
