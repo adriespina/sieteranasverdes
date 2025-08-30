@@ -16,13 +16,14 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
   <slot name="announcement">
     <Announcement />
   </slot>
   <slot name="header">
     <Header {...headerData} isSticky />
   </slot>
-  <main>
+  <main id="main">
     <slot />
   </main>
   <slot name="footer">

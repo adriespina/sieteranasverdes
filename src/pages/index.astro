@@ -21,6 +21,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
       <img
         src="/img/general-yoga.jpg"
         alt=""
+        aria-hidden="true"
         class="brightness-115 saturate-105 absolute inset-0 h-full w-full object-cover blur-[2px] filter"
         loading="eager"
         decoding="sync"
@@ -89,6 +90,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     <img
       src="/img/yoga-gente-2.jpg"
       alt=""
+      aria-hidden="true"
       class="absolute inset-0 h-full w-full object-cover opacity-30"
     />
     <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-4 md:grid-cols-2">
@@ -129,6 +131,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     <img
       src="/img/pilates1.jpg"
       alt=""
+      aria-hidden="true"
       class="brightness-115 saturate-105 absolute inset-0 h-full w-full object-cover opacity-50 blur-[2px]"
       loading="lazy"
     />
@@ -282,7 +285,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-1.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 1"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -290,7 +293,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-2.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 2"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -298,7 +301,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-3.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 3"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -306,7 +309,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-4.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 4"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -314,7 +317,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-5.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 5"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -322,7 +325,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-6.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 6"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -330,7 +333,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           <img
             src="/img/carrusel-7.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
-            alt=""
+            alt="Nuestra sala — vista 7"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
@@ -389,18 +392,22 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
       <h2 class="mb-6 text-3xl font-bold text-brand-900" data-reveal>Contacto</h2>
 
       <form action="https://formspree.io/f/mqadezoz" method="POST" class="grid gap-4" data-reveal>
+        <label for="contacto-nombre" class="sr-only">Nombre</label>
         <input
           class="card p-3"
           type="text"
+          id="contacto-nombre"
           name="nombre"
           placeholder="Tu nombre"
           required
           autocomplete="name"
         />
 
+        <label for="contacto-email" class="sr-only">Email</label>
         <input
           class="card p-3"
           type="email"
+          id="contacto-email"
           name="email"
           placeholder="Tu email"
           required
@@ -408,6 +415,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
         />
 
         <!-- Teléfono (opcional) -->
+        <label for="contacto-telefono" class="sr-only">Teléfono</label>
         <input
           class="card p-3"
           type="tel"
@@ -419,8 +427,10 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           title="Introduce un teléfono válido"
         />
 
+        <label for="contacto-mensaje" class="sr-only">Mensaje</label>
         <textarea
           class="card p-3"
+          id="contacto-mensaje"
           name="mensaje"
           rows="5"
           placeholder="¿En qué podemos ayudarte?"
