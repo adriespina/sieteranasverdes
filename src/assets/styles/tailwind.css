@@ -124,15 +124,6 @@ a {
   blockquote {
     @apply text-justify;
   }
-  /* Ensure paragraphs are justified even inside alignment wrappers */
-  .text-left p,
-  .text-right p,
-  .text-center p,
-  .md\:text-left p,
-  .md\:text-right p,
-  .md\:text-center p {
-    @apply text-justify;
-  }
   /* Blog/markdown typography */
   .prose p,
   .prose li,

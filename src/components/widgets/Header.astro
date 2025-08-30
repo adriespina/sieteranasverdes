@@ -190,6 +190,13 @@ const {
     });
   };
 
+  // Asegura exclusividad: al abrir uno, cierra los demás
+  allDetails().forEach((d) => {
+    d.addEventListener("toggle", () => {
+      if (d.hasAttribute("open")) closeAll(d);
+    });
+  });
+
   document.addEventListener("click", (e) => {
     const t = e.target;
     const current = t?.closest?.("details");
