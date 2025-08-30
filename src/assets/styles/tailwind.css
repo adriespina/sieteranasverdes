@@ -131,3 +131,11 @@ a {
     @apply text-justify;
   }
 }
+
+@layer utilities {
+  /* Diferir el render del contenido offscreen */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+  }
+}

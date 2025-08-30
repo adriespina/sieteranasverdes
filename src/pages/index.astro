@@ -12,14 +12,21 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     class="relative grid min-h-[80vh] scroll-mt-10 place-items-center overflow-hidden bg-brand-100 md:scroll-mt-12"
   >
     <!-- Imagen de fondo: más clara y difuminada -->
-    <img
-      src="/img/general-yoga.jpg"
-      alt=""
-      class="brightness-115 saturate-105 absolute inset-0 h-full w-full object-cover blur-[2px] filter"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-    />
+    <picture class="absolute inset-0">
+      <source
+        srcset="/img/general-yoga-480.webp 480w, /img/general-yoga-768.webp 768w, /img/general-yoga-1080.webp 1080w, /img/general-yoga-1600.webp 1600w"
+        sizes="100vw"
+        type="image/webp"
+      />
+      <img
+        src="/img/general-yoga.jpg"
+        alt=""
+        class="brightness-115 saturate-105 absolute inset-0 h-full w-full object-cover blur-[2px] filter"
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
+    </picture>
 
     <!-- Capa de aclarado + blur del fondo -->
     <div class="absolute inset-0 bg-white/40 backdrop-blur-[1.5px]"></div>
@@ -34,7 +41,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 2) Intro general con 2 imágenes -->
-  <section id="intro" class="scroll-mt-10 bg-white py-16 md:scroll-mt-12">
+  <section id="intro" class="cv-auto scroll-mt-10 bg-white py-16 md:scroll-mt-12">
     <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 md:grid-cols-2">
       <div class="space-y-4" data-reveal>
         <h2 class="text-3xl font-bold text-brand-900">Actividades para todos</h2>
@@ -76,7 +83,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 3) Sección Yoga, con imagen de fondo -->
-  <section id="yoga" class="relative scroll-mt-10 bg-brand-50 py-24 md:scroll-mt-12">
+  <section id="yoga" class="cv-auto relative scroll-mt-10 bg-brand-50 py-24 md:scroll-mt-12">
     <img
       src="/img/yoga-gente-2.jpg"
       alt=""
@@ -96,7 +103,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 4) Baños de Bosque -->
-  <section id="banos" class="scroll-mt-10 bg-white py-16 md:scroll-mt-12">
+  <section id="banos" class="cv-auto scroll-mt-10 bg-white py-16 md:scroll-mt-12">
     <div class="mx-auto grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
       <img
         src="/img/bano-de-bosque.jpg"
@@ -115,7 +122,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- Pilates (fondo claro y difuminado, estilo similar a Yoga) -->
-  <section id="pilates" class="relative scroll-mt-16 bg-brand-50 py-24">
+  <section id="pilates" class="cv-auto relative scroll-mt-16 bg-brand-50 py-24">
     <!-- Imagen de fondo: clara + blur -->
     <img
       src="/img/pilates1.jpg"
@@ -140,7 +147,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 5) Otras actividades (grid 2×2, imágenes grandes) -->
-  <section id="otras" class="scroll-mt-10 bg-brand-50 py-16 md:scroll-mt-12">
+  <section id="otras" class="cv-auto scroll-mt-10 bg-brand-50 py-16 md:scroll-mt-12">
     <div class="mx-auto max-w-5xl px-4">
       <h2 class="mb-10 text-center text-4xl font-extrabold text-brand-900" data-reveal>
         Otras actividades
@@ -265,7 +272,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 6) Carrusel Nuestra Sala (scroll-snap ligero) -->
-  <section id="sala" class="scroll-mt-10 bg-white py-16 md:scroll-mt-12">
+  <section id="sala" class="cv-auto scroll-mt-10 bg-white py-16 md:scroll-mt-12">
     <div class="mx-auto max-w-6xl px-4">
       <h2 class="mb-6 text-3xl font-bold text-brand-900" data-reveal>Nuestra sala</h2>
       <div class="relative" data-reveal>
@@ -274,36 +281,57 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
             src="/img/carrusel-1.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-2.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-3.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-4.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-5.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-6.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
           <img
             src="/img/carrusel-7.jpg"
             class="h-72 w-auto snap-center rounded-2xl shadow"
             alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
         </div>
         <div class="mt-4 flex gap-3">
@@ -333,7 +361,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 7) Ubicación con Google Maps -->
-  <section id="mapa" class="scroll-mt-10 bg-brand-50 py-16 md:scroll-mt-12">
+  <section id="mapa" class="cv-auto scroll-mt-10 bg-brand-50 py-16 md:scroll-mt-12">
     <div class="mx-auto max-w-6xl px-4">
       <h2 class="mb-6 text-3xl font-bold text-brand-900" data-reveal>Dónde estamos</h2>
       <div class="overflow-hidden rounded-2xl shadow" data-reveal>
@@ -354,7 +382,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   </section>
 
   <!-- 8) Contacto (formulario) -->
-  <section id="contacto" class="scroll-mt-10 bg-white py-16 md:scroll-mt-12">
+  <section id="contacto" class="cv-auto scroll-mt-10 bg-white py-16 md:scroll-mt-12">
     <div class="mx-auto max-w-3xl px-4">
       <h2 class="mb-6 text-3xl font-bold text-brand-900" data-reveal>Contacto</h2>
 

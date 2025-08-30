@@ -38,6 +38,16 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+
+    <!-- Preload opcional del hero por defecto de Home -->
+    <link
+      rel="preload"
+      as="image"
+      href="/img/general-yoga-1080.webp"
+      imagesrcset="/img/general-yoga-480.webp 480w, /img/general-yoga-768.webp 768w, /img/general-yoga-1080.webp 1080w, /img/general-yoga-1600.webp 1600w"
+      imagesizes="100vw"
+      type="image/webp"
+    />
   </head>
 
   <body class="bg-page tracking-tight text-default antialiased">
