@@ -20,12 +20,19 @@ import Layout from "~/layouts/BaseLayout.astro";
       <!-- Imagen -->
       <div class="order-1">
         <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-          <img
-            src="/img/yoga1.jpg"
-            alt="Práctica de yoga"
-            loading="lazy"
-            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-          />
+          <picture>
+            <source
+              srcset="/img/yoga1-480.webp 480w, /img/yoga1-768.webp 768w, /img/yoga1-1080.webp 1080w, /img/yoga1-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/yoga1.jpg"
+              alt="Práctica de yoga"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
           <div class="absolute inset-0 bg-white/30"></div>
         </div>
       </div>
@@ -57,12 +64,19 @@ import Layout from "~/layouts/BaseLayout.astro";
       <!-- Imagen -->
       <div class="order-1 md:order-2">
         <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-          <img
-            src="/img/yoga2.jpg"
-            alt="Respiración y concentración"
-            loading="lazy"
-            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-          />
+          <picture>
+            <source
+              srcset="/img/yoga2-480.webp 480w, /img/yoga2-768.webp 768w, /img/yoga2-1080.webp 1080w, /img/yoga2-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/yoga2.jpg"
+              alt="Respiración y concentración"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
           <div class="absolute inset-0 bg-white/30"></div>
         </div>
       </div>
@@ -74,12 +88,19 @@ import Layout from "~/layouts/BaseLayout.astro";
       <!-- Imagen -->
       <div class="order-1">
         <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-          <img
-            src="/img/yoga3.jpg"
-            alt="Relajación guiada final"
-            loading="lazy"
-            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-          />
+          <picture>
+            <source
+              srcset="/img/yoga3-480.webp 480w, /img/yoga3-768.webp 768w, /img/yoga3-1080.webp 1080w, /img/yoga3-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/yoga3.jpg"
+              alt="Relajación guiada final"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
           <div class="absolute inset-0 bg-white/30"></div>
         </div>
       </div>

@@ -21,12 +21,26 @@ import Layout from "~/layouts/BaseLayout.astro"; // Ajusta a tu ruta real de lay
   <section class="bg-white py-10 md:py-14">
     <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
       <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-        <img
-          src="/img/bano1.jpg"
-          alt="Bosque y respiración consciente"
-          loading="lazy"
-          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-        />
+        <picture>
+          <source
+            srcset="/img/bano1-480.webp 480w, /img/bano1-768.webp 768w, /img/bano1-1080.webp 1080w, /img/bano1-1600.webp 1600w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            type="image/webp"
+          />
+          <picture>
+            <source
+              srcset="/img/bano2-480.webp 480w, /img/bano2-768.webp 768w, /img/bano2-1080.webp 1080w, /img/bano2-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/bano1.jpg"
+              alt="Bosque y respiración consciente"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
+        </picture>
         <div class="absolute inset-0 bg-white/30"></div>
       </div>
       <div data-reveal>
@@ -52,93 +66,114 @@ import Layout from "~/layouts/BaseLayout.astro"; // Ajusta a tu ruta real de lay
       <div
         class="relative order-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 md:order-2"
       >
-        <img
-          src="/img/bano2.jpg"
-          alt="Conexión multisensorial con la naturaleza"
-          loading="lazy"
-          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-        />
-        <div class="absolute inset-0 bg-white/30"></div>
+        <picture>
+          <source
+            srcset="/img/bano3-480.webp 480w, /img/bano3-768.webp 768w, /img/bano3-1080.webp 1080w, /img/bano3-1600.webp 1600w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            type="image/webp"
+          />
+          <img
+            src="/img/bano2.jpg"
+            alt="Conexión multisensorial con la naturaleza"
+            loading="lazy"
+            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+          />
+          <div class="absolute inset-0 bg-white/30"></div>
+        </picture>
       </div>
     </div>
-  </section>
 
-  <!-- Base teórica -->
-  <section class="bg-white py-10 md:py-14">
-    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
-      <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-        <img
-          src="/img/bano3.jpg"
-          alt="Naturaleza restaurativa"
-          loading="lazy"
-          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-        />
-        <div class="absolute inset-0 bg-white/30"></div>
-      </div>
-      <div data-reveal>
-        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Base teórica</h2>
-        <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-gray-800/90">
-          <li><em>Hipótesis de la Restauración de la Atención</em> (Kaplan, 1995).</li>
-          <li><em>Hipótesis de Reducción del Estrés</em> (Ulrich, 1991).</li>
-          <li><em>Hipótesis de Biofilia</em> (Kellert y Wilson, 1993).</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Relevancia clínica + CTA -->
-  <section class="bg-brand-50 py-10 md:py-14">
-    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
-      <div class="order-2 md:order-1" data-reveal>
-        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Relevancia clínica</h2>
-        <p class="mt-3 leading-relaxed text-gray-800/90">
-          Creciente interés en Occidente por su eficacia para reducir estrés, ansiedad y síntomas
-          depresivos, mejorando la regulación emocional y el bienestar general.
-        </p>
-        <div class="mt-6">
-          <a href="/#contacto" class="btn">Quiero más info</a>
+    <!-- Base teórica -->
+    <section class="bg-white py-10 md:py-14">
+      <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+        <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <picture>
+            <source
+              srcset="/img/bano3-480.webp 480w, /img/bano3-768.webp 768w, /img/bano3-1080.webp 1080w, /img/bano3-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/bano3.jpg"
+              alt="Naturaleza restaurativa"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-white/30"></div>
+        </div>
+        <div data-reveal>
+          <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Base teórica</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-gray-800/90">
+            <li><em>Hipótesis de la Restauración de la Atención</em> (Kaplan, 1995).</li>
+            <li><em>Hipótesis de Reducción del Estrés</em> (Ulrich, 1991).</li>
+            <li><em>Hipótesis de Biofilia</em> (Kellert y Wilson, 1993).</li>
+          </ul>
         </div>
       </div>
-      <div
-        class="relative order-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 md:order-2"
-      >
-        <img
-          src="/img/bano4.jpg"
-          alt="Bienestar y calma en el bosque"
-          loading="lazy"
-          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
-        />
-        <div class="absolute inset-0 bg-white/30"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Animación ligera al entrar -->
-  <script is:inline>
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("revealed");
-          }
-        });
-      },
-      { threshold: 0.12 },
-    );
-    document.querySelectorAll("[data-reveal]").forEach((el) => {
-      el.classList.add("reveal");
-      io.observe(el);
-    });
-  </script>
-  <style is:global>
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: all 0.6s ease;
-    }
-    .reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+    <!-- Relevancia clínica + CTA -->
+    <section class="bg-brand-50 py-10 md:py-14">
+      <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+        <div class="order-2 md:order-1" data-reveal>
+          <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Relevancia clínica</h2>
+          <p class="mt-3 leading-relaxed text-gray-800/90">
+            Creciente interés en Occidente por su eficacia para reducir estrés, ansiedad y síntomas
+            depresivos, mejorando la regulación emocional y el bienestar general.
+          </p>
+          <div class="mt-6">
+            <a href="/#contacto" class="btn">Quiero más info</a>
+          </div>
+        </div>
+        <div
+          class="relative order-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 md:order-2"
+        >
+          <picture>
+            <source
+              srcset="/img/bano4-480.webp 480w, /img/bano4-768.webp 768w, /img/bano4-1080.webp 1080w, /img/bano4-1600.webp 1600w"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              type="image/webp"
+            />
+            <img
+              src="/img/bano4.jpg"
+              alt="Bienestar y calma en el bosque"
+              loading="lazy"
+              class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-white/30"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animación ligera al entrar -->
+    <script is:inline>
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("revealed");
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll("[data-reveal]").forEach((el) => {
+        el.classList.add("reveal");
+        io.observe(el);
+      });
+    </script>
+    <style is:global>
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 0.6s ease;
+      }
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </section>
 </Layout>

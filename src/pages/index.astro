@@ -43,8 +43,34 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
         </p>
       </div>
       <div class="grid grid-cols-2 gap-4" data-reveal>
-        <img src="/img/pilates-gente.jpg" class="rounded-2xl shadow" alt="Pilates" />
-        <img src="/img/yoga-3.jpg" class="rounded-2xl shadow" alt="Yoga" />
+        <picture>
+          <source
+            srcset="/img/pilates-gente-480.webp 480w, /img/pilates-gente-768.webp 768w, /img/pilates-gente-1080.webp 1080w, /img/pilates-gente-1600.webp 1600w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            type="image/webp"
+          />
+          <img
+            src="/img/pilates-gente.jpg"
+            alt="Pilates"
+            loading="lazy"
+            decoding="async"
+            class="h-auto w-full rounded-2xl shadow"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="/img/yoga-3-480.webp 480w, /img/yoga-3-768.webp 768w, /img/yoga-3-1080.webp 1080w, /img/yoga-3-1600.webp 1600w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            type="image/webp"
+          />
+          <img
+            src="/img/yoga-3.jpg"
+            alt="Yoga"
+            loading="lazy"
+            decoding="async"
+            class="h-auto w-full rounded-2xl shadow"
+          />
+        </picture>
       </div>
     </div>
   </section>
@@ -128,12 +154,20 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           data-reveal
         >
           <div class="aspect-3-2 w-full overflow-hidden">
-            <img
-              src="/img/respiracion.jpg"
-              alt="Respiracion y relajacion"
-              class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              loading="lazy"
-            />
+            <picture class="block h-full w-full">
+              <source
+                srcset="/img/respiracion-480.webp 480w, /img/respiracion-768.webp 768w, /img/respiracion-1080.webp 1080w, /img/respiracion-1600.webp 1600w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/respiracion.jpg"
+                alt="Respiracion y relajacion"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              />
+            </picture>
           </div>
           <!-- Velo + título sobre la imagen -->
           <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4">
@@ -149,12 +183,20 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           data-reveal
         >
           <div class="aspect-3-2 w-full overflow-hidden">
-            <img
-              src="/img/tratamientos-masajes.jpg"
-              alt="Tratamientos de bienestar y belleza"
-              class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              loading="lazy"
-            />
+            <picture class="block h-full w-full">
+              <source
+                srcset="/img/tratamientos-masajes-480.webp 480w, /img/tratamientos-masajes-768.webp 768w, /img/tratamientos-masajes-1080.webp 1080w, /img/tratamientos-masajes-1600.webp 1600w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/tratamientos-masajes.jpg"
+                alt="Tratamientos de bienestar y belleza"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              />
+            </picture>
           </div>
           <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4">
             <div class="rounded-2xl bg-black/15 px-4 py-3 text-white shadow-md backdrop-blur-[2px]">
@@ -169,12 +211,20 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           data-reveal
         >
           <div class="aspect-3-2 w-full overflow-hidden">
-            <img
-              src="/img/actividad-3.jpg"
-              alt="Talleres y eventos puntuales"
-              class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              loading="lazy"
-            />
+            <picture class="block h-full w-full">
+              <source
+                srcset="/img/actividad-3-480.webp 480w, /img/actividad-3-768.webp 768w, /img/actividad-3-1080.webp 1080w, /img/actividad-3-1600.webp 1600w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/actividad-3.jpg"
+                alt="Talleres y eventos puntuales"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              />
+            </picture>
           </div>
           <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4">
             <div class="rounded-2xl bg-black/15 px-4 py-3 text-white shadow-md backdrop-blur-[2px]">
@@ -189,12 +239,20 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
           data-reveal
         >
           <div class="aspect-3-2 w-full overflow-hidden">
-            <img
-              src="/img/actividad-4.jpg"
-              alt="Actividad adicional"
-              class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              loading="lazy"
-            />
+            <picture class="block h-full w-full">
+              <source
+                srcset="/img/actividad-4-480.webp 480w, /img/actividad-4-768.webp 768w, /img/actividad-4-1080.webp 1080w, /img/actividad-4-1600.webp 1600w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/actividad-4.jpg"
+                alt="Actividad adicional"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              />
+            </picture>
           </div>
           <div class="pointer-events-none absolute inset-x-0 bottom-0 p-4">
             <div class="rounded-2xl bg-black/15 px-4 py-3 text-white shadow-md backdrop-blur-[2px]">
