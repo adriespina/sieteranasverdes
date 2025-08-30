@@ -118,3 +118,29 @@ a {
 .aspect-3-2 {
   aspect-ratio: 3 / 2;
 }
+
+/* Global justification for textual content */
+@layer base {
+  p,
+  li,
+  dd,
+  figcaption,
+  blockquote {
+    @apply text-justify;
+  }
+  /* Ensure paragraphs are justified even inside alignment wrappers */
+  .text-left p,
+  .text-right p,
+  .text-center p,
+  .md\:text-left p,
+  .md\:text-right p,
+  .md\:text-center p {
+    @apply text-justify;
+  }
+  /* Blog/markdown typography */
+  .prose p,
+  .prose li,
+  .prose blockquote {
+    @apply text-justify;
+  }
+}
