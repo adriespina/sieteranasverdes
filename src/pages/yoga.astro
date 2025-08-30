@@ -3,6 +3,129 @@
 import Layout from "~/layouts/BaseLayout.astro";
 ---
 
-<Layout title="Yoga · Siete Ranas Verdes" description="Prácticas de yoga en Navia — respiración, asanas y relajación"> <!-- Cabecera simple --> <section class="py-10 md:py-14"> <div class="mx-auto max-w-5xl px-4"> <h1 class="text-4xl md:text-5xl font-extrabold text-brand-900">Yoga</h1> <p class="mt-3 text-gray-700 max-w-2xl"> Un espacio tranquilo para equilibrar cuerpo, mente y emociones. </p> </div> </section> <!-- Sección 1 --> <section class="py-10 md:py-14 bg-white"> <div class="mx-auto max-w-5xl px-4 grid gap-8 md:grid-cols-2 md:items-center"> <!-- Imagen --> <div class="order-1"> <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"> <img src="/img/yoga1.jpg" alt="Práctica de yoga" loading="lazy" class="h-full w-full object-cover brightness-[1.12] saturate-105 blur-[1px] opacity-95" /> <div class="absolute inset-0 bg-white/30"></div> </div> </div> <!-- Texto --> <div class="order-2" data-reveal> <h2 class="text-2xl md:text-3xl font-bold text-brand-900">Equilibrio y bienestar</h2> <p class="mt-3 text-gray-800/90 leading-relaxed"> Estas prácticas están dirigidas al equilibrio del cuerpo, mente y emociones, que fortalecen los sistemas respiratorios, nerviosos, digestivos, circulatorios e inmunológicos; reducen el estrés, mejoran el sueño, la atención y la concentración, aumentan y restablecen la energía, alivian tensiones, fortalecen los tejidos y mejoran la postura. Lo ideal es que descubras los beneficios que tú mism@ experimentas en ti. </p> </div> </div> </section> <!-- Sección 2 (invertida) --> <section class="py-10 md:py-14 bg-brand-50"> <div class="mx-auto max-w-5xl px-4 grid gap-8 md:grid-cols-2 md:items-center"> <!-- Texto --> <div class="order-2 md:order-1" data-reveal> <h2 class="text-2xl md:text-3xl font-bold text-brand-900">Una práctica ancestral</h2> <p class="mt-3 text-gray-800/90 leading-relaxed"> Yoga, una práctica ancestral originaria de la India, a través de sus técnicas de respiración o pranayama, las diferentes posturas o asanas, relajación, concentración y meditación. </p> </div> <!-- Imagen --> <div class="order-1 md:order-2"> <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"> <img src="/img/yoga2.jpg" alt="Respiración y concentración" loading="lazy" class="h-full w-full object-cover brightness-[1.12] saturate-105 blur-[1px] opacity-95" /> <div class="absolute inset-0 bg-white/30"></div> </div> </div> </div> </section> <!-- Sección 3 --> <section class="py-10 md:py-14 bg-white"> <div class="mx-auto max-w-5xl px-4 grid gap-8 md:grid-cols-2 md:items-center"> <!-- Imagen --> <div class="order-1"> <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"> <img src="/img/yoga3.jpg" alt="Relajación guiada final" loading="lazy" class="h-full w-full object-cover brightness-[1.12] saturate-105 blur-[1px] opacity-95" /> <div class="absolute inset-0 bg-white/30"></div> </div> </div> <!-- Texto --> <div class="order-2" data-reveal> <h2 class="text-2xl md:text-3xl font-bold text-brand-900">Cómo son nuestras clases</h2> <p class="mt-3 text-gray-800/90 leading-relaxed"> Nuestras clases constan de 3 partes diferenciadas: </p> <ul class="mt-3 space-y-2 text-gray-800/90"> <li>• Conciencia corporal y <em>Pranayamas</em> (respiración).</li> <li>• <em>Asanas</em>.</li> <li>• Relajación guiada final.</li> </ul> <div class="mt-6"> <a href="/#contacto" class="btn">Quiero más info</a> </div> </div> </div> </section> <!-- Animación ligera al entrar los bloques --> <script is:inline> const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('revealed'); }}); }, { threshold: 0.12 }); document.querySelectorAll('[data-reveal]').forEach(el=>{ el.classList.add('reveal'); io.observe(el); }); </script> <style is:global> .reveal{ opacity:0; transform: translateY(16px); transition: all .6s ease; } .reveal.revealed{ opacity:1; transform: translateY(0); } </style>
+<Layout
+  title="Yoga · Siete Ranas Verdes"
+  description="Prácticas de yoga en Navia — respiración, asanas y relajación"
+>
+  <!-- Cabecera simple -->
+  <section class="py-10 md:py-14">
+    <div class="mx-auto max-w-5xl px-4">
+      <h1 class="text-4xl font-extrabold text-brand-900 md:text-5xl">Yoga</h1>
+      <p class="mt-3 max-w-2xl text-gray-700">
+        Hatha Yoga. Sesiones para todos los niveles.
+      </p>
+    </div>
+  </section>
+  <!-- Sección 1 -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <!-- Imagen -->
+      <div class="order-1">
+        <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img
+            src="/img/yoga1.jpg"
+            alt="Práctica de yoga"
+            loading="lazy"
+            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+          />
+          <div class="absolute inset-0 bg-white/30"></div>
+        </div>
+      </div>
+      <!-- Texto -->
+      <div class="order-2" data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Equilibrio y bienestar</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Estas prácticas están dirigidas al equilibrio del cuerpo, mente y emociones, que
+          fortalecen los sistemas respiratorios, nerviosos, digestivos, circulatorios e
+          inmunológicos; reducen el estrés, mejoran el sueño, la atención y la concentración,
+          aumentan y restablecen la energía, alivian tensiones, fortalecen los tejidos y mejoran la
+          postura. Lo ideal es que descubras los beneficios que tú mism@ experimentas en ti.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Sección 2 (invertida) -->
+  <section class="bg-brand-50 py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <!-- Texto -->
+      <div class="order-2 md:order-1" data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Una práctica ancestral</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Yoga, una práctica ancestral originaria de la India, a través de sus técnicas de
+          respiración o pranayama, las diferentes posturas o asanas, relajación, concentración y
+          meditación.
+        </p>
+      </div>
+      <!-- Imagen -->
+      <div class="order-1 md:order-2">
+        <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img
+            src="/img/yoga2.jpg"
+            alt="Respiración y concentración"
+            loading="lazy"
+            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+          />
+          <div class="absolute inset-0 bg-white/30"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sección 3 -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <!-- Imagen -->
+      <div class="order-1">
+        <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img
+            src="/img/yoga3.jpg"
+            alt="Relajación guiada final"
+            loading="lazy"
+            class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+          />
+          <div class="absolute inset-0 bg-white/30"></div>
+        </div>
+      </div>
+      <!-- Texto -->
+      <div class="order-2" data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Cómo son nuestras clases</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Nuestras clases constan de 3 partes diferenciadas:
+        </p>
+        <ul class="mt-3 space-y-2 text-gray-800/90">
+          <li>• Conciencia corporal y <em>Pranayamas</em> (respiración).</li>
+          <li>• <em>Asanas</em>.</li>
+          <li>• Relajación guiada final.</li>
+        </ul>
+        <div class="mt-6"><a href="/#contacto" class="btn">Quiero más info</a></div>
+      </div>
+    </div>
+  </section>
+  <!-- Animación ligera al entrar los bloques -->
+  <script is:inline>
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => {
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+  </script>
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.6s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </Layout>
-
