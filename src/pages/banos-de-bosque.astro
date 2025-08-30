@@ -1,22 +1,144 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
-
-const metadata = { title: "Baños de Bosque" };
+import Layout from "~/layouts/BaseLayout.astro"; // Ajusta a tu ruta real de layout si es distinta
 ---
 
-<Layout metadata={metadata}>
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto max-w-5xl px-6">
-      <h1 class="mb-4 text-4xl font-bold text-brand-700 md:text-5xl">Baños de Bosque</h1>
-      <p class="mb-8 text-lg text-muted">
-        Conexión con la naturaleza a través de paseos conscientes en el bosque.
+<Layout
+  title="Baños de Bosque · Siete Ranas Verdes"
+  description="Shinrin-yoku en Navia: respiración, presencia plena y conexión con la naturaleza"
+>
+  <!-- Hero breve -->
+  <section class="py-10 md:py-14">
+    <div class="mx-auto max-w-5xl px-4">
+      <h1 class="text-4xl font-extrabold text-brand-900 md:text-5xl">Baños de Bosque</h1>
+      <p class="mt-3 max-w-2xl text-gray-700">
+        Shinrin-yoku: respiración consciente, conexión multisensorial y presencia plena en la
+        naturaleza.
       </p>
-      <img
-        src="/img/banos-hero.jpg"
-        alt="Baños de bosque"
-        class="w-full rounded-2xl shadow-lg"
-        loading="eager"
-      />
     </div>
   </section>
+
+  <!-- Origen -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+        <img
+          src="/img/bano1.jpg"
+          alt="Bosque y respiración consciente"
+          loading="lazy"
+          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+        />
+        <div class="absolute inset-0 bg-white/30"></div>
+      </div>
+      <div data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Origen</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Los Baños de Bosque (Shinrin-yoku) surgieron en Japón en la década de 1980 como programa
+          de salud pública para abordar el estrés laboral y enfermedades profesionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Definición (invertida) -->
+  <section class="bg-brand-50 py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <div class="order-2 md:order-1" data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Definición</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Inmersión consciente y sistematizada en un entorno natural, con énfasis en la respiración,
+          la conexión multisensorial con la naturaleza y la presencia plena.
+        </p>
+      </div>
+      <div
+        class="relative order-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 md:order-2"
+      >
+        <img
+          src="/img/bano2.jpg"
+          alt="Conexión multisensorial con la naturaleza"
+          loading="lazy"
+          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+        />
+        <div class="absolute inset-0 bg-white/30"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Base teórica -->
+  <section class="bg-white py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+        <img
+          src="/img/bano3.jpg"
+          alt="Naturaleza restaurativa"
+          loading="lazy"
+          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+        />
+        <div class="absolute inset-0 bg-white/30"></div>
+      </div>
+      <div data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Base teórica</h2>
+        <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-gray-800/90">
+          <li><em>Hipótesis de la Restauración de la Atención</em> (Kaplan, 1995).</li>
+          <li><em>Hipótesis de Reducción del Estrés</em> (Ulrich, 1991).</li>
+          <li><em>Hipótesis de Biofilia</em> (Kellert y Wilson, 1993).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relevancia clínica + CTA -->
+  <section class="bg-brand-50 py-10 md:py-14">
+    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
+      <div class="order-2 md:order-1" data-reveal>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Relevancia clínica</h2>
+        <p class="mt-3 leading-relaxed text-gray-800/90">
+          Creciente interés en Occidente por su eficacia para reducir estrés, ansiedad y síntomas
+          depresivos, mejorando la regulación emocional y el bienestar general.
+        </p>
+        <div class="mt-6">
+          <a href="/#contacto" class="btn">Quiero más info</a>
+        </div>
+      </div>
+      <div
+        class="relative order-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5 md:order-2"
+      >
+        <img
+          src="/img/bano4.jpg"
+          alt="Bienestar y calma en el bosque"
+          loading="lazy"
+          class="saturate-105 h-full w-full object-cover opacity-95 blur-[1px] brightness-[1.12]"
+        />
+        <div class="absolute inset-0 bg-white/30"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animación ligera al entrar -->
+  <script is:inline>
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => {
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+  </script>
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.6s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </Layout>
