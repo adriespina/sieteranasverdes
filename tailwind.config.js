@@ -6,6 +6,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", "var(--aw-font-sans, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--aw-font-serif, ui-serif)", ...defaultTheme.fontFamily.serif],
+        heading: ["var(--aw-font-heading, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: "var(--aw-color-primary)",
         secondary: "var(--aw-color-secondary)",
@@ -24,11 +29,6 @@ export default {
           800: "#236a43",
           900: "#1d5838",
         },
-      },
-      fontFamily: {
-        sans: ["var(--aw-font-sans, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
-        serif: ["var(--aw-font-serif, ui-serif)", ...defaultTheme.fontFamily.serif],
-        heading: ["var(--aw-font-heading, ui-sans-serif)", ...defaultTheme.fontFamily.sans],
       },
 
       animation: {
