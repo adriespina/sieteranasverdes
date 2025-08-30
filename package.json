@@ -13,6 +13,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "images": "node scripts/optimize-images.mjs",
     "format": "prettier --write .",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
     "check:astro": "astro check",
