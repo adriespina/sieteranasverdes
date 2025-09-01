@@ -69,4 +69,24 @@ const postCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
+  socio: defineCollection({
+    loader: glob({ pattern: ["*.md", "*.mdx"], base: "src/data/socios" }),
+    schema: ({ image }) =>
+      z.object({
+        publishDate: z.date().optional(),
+        updateDate: z.date().optional(),
+        draft: z.boolean().optional(),
+
+        title: z.string(),
+        excerpt: z.string().optional(),
+        // Acepta asset importado o cadena pública
+        image: z.union([z.string(), image()]).optional(),
+
+        category: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+        author: z.string().optional(),
+
+        metadata: metadataDefinition(),
+      }),
+  }),
 };
