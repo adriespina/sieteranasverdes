@@ -1,0 +1,35 @@
+---
+export interface Props {
+  url?: string; // URL completa de la publicación (p, reel, tv)
+  id?: string; // shortcode opcional, ej. DLrXhgsoOQD
+  caption?: string; // texto accesible
+}
+
+const { id, url, caption = "Publicación de Instagram" } = Astro.props as Props;
+
+const permalink = url ? url : id ? `https://www.instagram.com/p/${id}/` : "";
+
+if (!permalink) {
+  throw new Error("Instagram: Debes proporcionar 'url' o 'id'.");
+}
+---
+
+<div class="mx-auto w-full max-w-[540px]">
+  <blockquote class="instagram-media" data-instgrm-permalink={permalink} data-instgrm-version="14">
+    <a href={permalink} aria-label={caption}>
+      <span class="sr-only">{caption}</span>
+    </a>
+  </blockquote>
+</div>
+
+<script is:inline>
+  const src = "https://www.instagram.com/embed.js";
+  if (!document.querySelector(`script[src="${src}"]`)) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = src;
+    document.head.appendChild(s);
+  } else if (window.instgrm?.Embeds?.process) {
+    window.instgrm.Embeds.process();
+  }
+</script>

@@ -10,7 +10,14 @@ const { src, title = "Audio" } = Astro.props as Props;
 
 <!-- eslint-disable astro/jsx-a11y/media-has-caption -->
 <div class="rounded-2xl border bg-white p-3 shadow-sm">
-  <audio controls preload="none" class="w-full" aria-label={title}>
+  <audio
+    controls
+    preload="none"
+    class="w-full"
+    aria-label={title}
+    controlslist="nodownload noplaybackrate"
+    oncontextmenu="return false;"
+  >
     <source src={src} type="audio/mpeg" />
     Tu navegador no soporta el elemento <code>audio</code>.
   </audio>
