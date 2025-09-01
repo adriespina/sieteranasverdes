@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 
 import Image from "~/components/common/Image.astro";
+import { findImage } from "~/utils/images";
 import PostTags from "~/components/blog/Tags.astro";
 import SocialShare from "~/components/common/SocialShare.astro";
 
@@ -16,6 +17,7 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+const image = await findImage(post.image);
 ---
 
 <section class="mx-auto py-8 sm:py-16 lg:py-20">
@@ -79,18 +81,30 @@ const { post, url } = Astro.props;
       </p>
 
       {
-        post.image ? (
-          <Image
-            src={post.image}
-            class="mx-auto mb-6 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-[900px]"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ""}
-            width={900}
-            height={506}
-            loading="eager"
-            decoding="async"
-          />
+        image ? (
+          typeof image === "string" ? (
+            <img
+              src={image}
+              alt={post?.excerpt || ""}
+              width="1200"
+              height="630"
+              loading="eager"
+              decoding="async"
+              class="mx-auto mb-6 max-w-full bg-gray-400 object-cover dark:bg-slate-700 sm:rounded-md lg:max-w-[900px]"
+            />
+          ) : (
+            <Image
+              src={image}
+              class="mx-auto mb-6 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-[900px]"
+              widths={[400, 900]}
+              sizes="(max-width: 900px) 400px, 900px"
+              alt={post?.excerpt || ""}
+              width={900}
+              height={506}
+              loading="eager"
+              decoding="async"
+            />
+          )
         ) : (
           <div class="mx-auto max-w-3xl px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />

@@ -25,19 +25,41 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, "post") : 
       image &&
         (link ? (
           <a href={link}>
-            <Image
-              src={image}
-              class="w-full rounded bg-gray-400 shadow-lg dark:bg-slate-700 md:h-full"
-              widths={[400, 900]}
-              width={400}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={post.title}
-              aspectRatio="16:9"
-              layout="cover"
-              loading="lazy"
-              decoding="async"
-            />
+            {typeof image === "string" ? (
+              <img
+                src={image}
+                alt={post.title}
+                width="1200"
+                height="630"
+                loading="lazy"
+                decoding="async"
+                class="w-full rounded bg-gray-400 object-cover shadow-lg dark:bg-slate-700 md:h-full"
+              />
+            ) : (
+              <Image
+                src={image}
+                class="w-full rounded bg-gray-400 shadow-lg dark:bg-slate-700 md:h-full"
+                widths={[400, 900]}
+                width={400}
+                sizes="(max-width: 900px) 400px, 900px"
+                alt={post.title}
+                aspectRatio="16:9"
+                layout="cover"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </a>
+        ) : typeof image === "string" ? (
+          <img
+            src={image}
+            alt={post.title}
+            width="1200"
+            height="630"
+            loading="lazy"
+            decoding="async"
+            class="w-full rounded bg-gray-400 object-cover shadow-lg dark:bg-slate-700 md:h-full"
+          />
         ) : (
           <Image
             src={image}
