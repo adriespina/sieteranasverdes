@@ -48,6 +48,31 @@ const noindex = m?.noindex ?? false;
 const site = Astro.site ?? new URL("https://sieteranasverdes.es");
 const url = new URL(Astro.url.pathname, site);
 const ogImage = new URL(image, site).toString();
+// JSON-LD generado dinámicamente para LocalBusiness
+const ldJson = JSON.stringify(
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Siete Ranas Verdes",
+    url: site.toString(),
+    image: ogImage,
+    telephone: "+34 635601842",
+    email: "hola@sieteranasverdes.com",
+    sameAs: ["https://www.instagram.com/siete_ranas_verdes"],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Traves��a del Poste, 1, Bajo",
+      addressLocality: "Navia",
+      addressRegion: "Asturias",
+      addressCountry: "ES",
+    },
+    areaServed: "Navia, Asturias, Espa��a",
+    keywords:
+      "yoga, ba��os de bosque, navia, asturias, respiraci��n, pilates, bienestar, consciencia",
+  },
+  null,
+  2,
+);
 ---
 
 <!doctype html>
@@ -75,14 +100,16 @@ const ogImage = new URL(image, site).toString();
     />
 
     <!-- Canonical -->
-    <link rel="canonical" href={(canonical ?? url.toString())} />
+    <link rel="canonical" href={canonical ?? url.toString()} />
 
     <!-- Robots -->
-    {noindex ? (
-      <meta name="robots" content="noindex, nofollow" />
-    ) : (
-      <meta name="robots" content="index, follow" />
-    )}
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow" />
+      )
+    }
 
     <!-- Primary Meta -->
     <title>{title}</title>
@@ -112,32 +139,38 @@ const ogImage = new URL(image, site).toString();
     <meta name="twitter:image" content={ogImage} />
 
     <!-- JSON-LD: LocalBusiness -->
-    <script is:inline type="application/ld+json">
-      {JSON.stringify(
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Siete Ranas Verdes",
-          url: site.toString(),
-          image: ogImage,
-          telephone: "+34 635601842",
-          email: "hola@sieteranasverdes.com",
-          sameAs: ["https://www.instagram.com/siete_ranas_verdes"],
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Travesía del Poste, 1, Bajo",
-            addressLocality: "Navia",
-            addressRegion: "Asturias",
-            addressCountry: "ES",
+    <!-- prettier-ignore-start -->
+    <script is:inline type="text/javascript">
+      {
+        JSON.stringify(
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Siete Ranas Verdes",
+            url: site.toString(),
+            image: ogImage,
+            telephone: "+34 635601842",
+            email: "hola@sieteranasverdes.com",
+            sameAs: ["https://www.instagram.com/siete_ranas_verdes"],
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Travesía del Poste, 1, Bajo",
+              addressLocality: "Navia",
+              addressRegion: "Asturias",
+              addressCountry: "ES",
+            },
+            areaServed: "Navia, Asturias, España",
+            keywords:
+              "yoga, baños de bosque, navia, asturias, respiración, pilates, bienestar, consciencia",
           },
-          areaServed: "Navia, Asturias, España",
-          keywords:
-            "yoga, baños de bosque, navia, asturias, respiración, pilates, bienestar, consciencia",
-        },
-        null,
-        2,
-      )}
+          null,
+          2,
+        );
+      }
     </script>
+    <!-- JSON-LD render dinámico para SEO -->
+    <script is:inline type="application/ld+json" set:html={ldJson} />
+    <!-- prettier-ignore-end -->
   </head>
 
   <body class="bg-page tracking-tight text-default antialiased">
