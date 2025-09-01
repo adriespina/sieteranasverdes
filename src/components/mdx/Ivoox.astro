@@ -1,0 +1,22 @@
+---
+export interface Props {
+  // Usa la URL de insertar que da iVoox: ej. https://www.ivoox.com/player_ej_12345678_6_1.html
+  src: string;
+  title?: string;
+  height?: number;
+}
+
+const { src, title = "iVoox player", height = 200 } = Astro.props as Props;
+---
+
+<div class="relative w-full overflow-hidden rounded-2xl shadow ring-1 ring-black/5">
+  <iframe
+    src={src}
+    title={title}
+    width="100%"
+    height={height}
+    frameborder="0"
+    allowfullscreen
+    loading="lazy"
+    decoding="async"></iframe>
+</div>

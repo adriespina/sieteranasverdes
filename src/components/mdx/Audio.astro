@@ -1,0 +1,18 @@
+---
+/* eslint-disable astro/jsx-a11y/media-has-caption */
+export interface Props {
+  src: string; // /audio/mi-pista.mp3 o URL https://...
+  title?: string;
+}
+
+const { src, title = "Audio" } = Astro.props as Props;
+---
+
+<!-- eslint-disable astro/jsx-a11y/media-has-caption -->
+<div class="rounded-2xl border bg-white p-3 shadow-sm">
+  <audio controls preload="none" class="w-full" aria-label={title}>
+    <source src={src} type="audio/mpeg" />
+    Tu navegador no soporta el elemento <code>audio</code>.
+  </audio>
+  <p class="mt-2 text-sm text-gray-600">{title}</p>
+</div>

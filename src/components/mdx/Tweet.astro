@@ -1,0 +1,28 @@
+---
+export interface Props {
+  id: string; // ID numérico del tweet
+}
+
+const { id } = Astro.props as Props;
+const url = `https://twitter.com/i/status/${id}`;
+---
+
+<blockquote class="twitter-tweet">
+  <a href={url} aria-label="Ver tweet en X/Twitter">
+    <span class="sr-only">Ver tweet</span>
+  </a>
+</blockquote>
+
+<!-- Carga única del script de widgets -->
+<script is:inline>
+  const src = "https://platform.twitter.com/widgets.js";
+  if (!document.querySelector(`script[src="${src}"]`)) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = src;
+    s.charset = "utf-8";
+    document.head.appendChild(s);
+  } else if (window.twttr?.widgets?.load) {
+    window.twttr.widgets.load();
+  }
+</script>
