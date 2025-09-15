@@ -1,4 +1,4 @@
-﻿---
+---
 import ToggleMenu from "~/components/common/ToggleMenu.astro";
 import Button from "~/components/ui/Button.astro";
 
@@ -70,7 +70,7 @@ const {
       aria-label="Main navigation"
     >
       <ul class="hidden items-center gap-5 whitespace-nowrap md:flex">
-        <!-- Menú: Actividades -->
+        <!-- Men�: Actividades -->
         <li class="relative">
           <details class="group">
             <summary
@@ -79,7 +79,7 @@ const {
               class="nav-dd focus-ring inline-flex cursor-pointer select-none items-center gap-1 whitespace-nowrap text-base text-gray-700 hover:text-brand-800 md:text-lg"
             >
               Actividades
-              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
+              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">?</span>
             </summary>
             <div
               role="menu"
@@ -95,7 +95,7 @@ const {
                 href="/#banos"
                 role="menuitem"
                 class="focus-ring block rounded-lg px-3 py-2 text-[15px] hover:bg-brand-50 md:text-base"
-                >Baños de Bosque</a
+                >Ba�os de Bosque</a
               >
               <a
                 href="/#pilates"
@@ -113,7 +113,7 @@ const {
           </details>
         </li>
 
-        <!-- Menú: Nuestra sala -->
+        <!-- Men�: Nuestra sala -->
         <li class="relative">
           <details class="group">
             <summary
@@ -122,7 +122,7 @@ const {
               class="nav-dd focus-ring inline-flex cursor-pointer select-none items-center gap-1 whitespace-nowrap text-base text-gray-700 hover:text-brand-800 md:text-lg"
             >
               Nuestra sala
-              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">▾</span>
+              <span class="ml-0.5 inline-block transition-transform group-open:rotate-180">?</span>
             </summary>
             <div
               role="menu"
@@ -160,8 +160,10 @@ const {
           >
         </li>
 
-        <!-- CTA (duplicado aquí para mantener estructura; el real sigue a la derecha) -->
-        <li class="md:hidden"><a href="/socios" class="btn focus-ring no-underline">Socios</a></li>
+        <!-- CTA (duplicado aqu� para mantener estructura; el real sigue a la derecha) -->
+        <li class="md:hidden">
+          <a href="/socios" class="btn focus-ring no-underline">Comunidad</a>
+        </li>
       </ul>
     </nav>
     <div
@@ -202,7 +204,7 @@ const {
     });
   };
 
-  // Asegura exclusividad: al abrir uno, cierra los demás
+  // Asegura exclusividad: al abrir uno, cierra los dem�s
   allDetails().forEach((d) => {
     d.addEventListener("toggle", () => {
       if (d.hasAttribute("open")) closeAll(d);

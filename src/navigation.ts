@@ -11,7 +11,7 @@ export const headerData = {
     { text: "Contacto", href: getPermalink("/#contacto") },
     { text: "Blog", href: getBlogPermalink() },
   ],
-  actions: [{ text: "Socios", href: getPermalink("/socios") }],
+  actions: [{ text: "Comunidad", href: getPermalink("/socios") }],
 };
 
 export const footerData = {
