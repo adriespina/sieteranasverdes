@@ -33,7 +33,17 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        try {
+          const url = new URL(page);
+          const pathname = url.pathname;
+          return pathname !== "/socios" && !pathname.startsWith("/socios/");
+        } catch {
+          return page !== "/socios" && !page.startsWith("/socios/");
+        }
+      },
+    }),
     mdx(),
     icon({
       include: {

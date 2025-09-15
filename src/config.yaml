@@ -1,6 +1,6 @@
 site:
   name: Siete Ranas Verdes
-  site: "https://astrowind.vercel.app"
+  site: "https://sieteranasverdes.com"
   base: "/"
   trailingSlash: false
 
