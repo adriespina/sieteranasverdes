@@ -304,3 +304,9 @@ Initially created by **Arthelokyo** and maintained by a community of [contributo
 ## Cloudflare Access para /socios
 
 Consulte [docs/cloudflare-access.md](docs/cloudflare-access.md) para proteger el �rea /socios/\*\* con Cloudflare Access (Zero Trust) al desplegar en Cloudflare Pages.
+
+## Despliegue en Cloudflare Pages
+
+- La rama `main` se valida con CI (ver `.github/workflows/ci.yml`) usando Node 20 y `pnpm build`.
+- Para desplegar autom�ticamente en Cloudflare Pages, configura los secretos `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_PAGES_PROJECT` (nombre del proyecto) usados por `.github/workflows/deploy.yml`.
+- El archivo `public/_headers` define cabeceras de seguridad y pol�ticas de cach� que Cloudflare Pages aplicar� al origen est�tico.
