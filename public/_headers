@@ -1,18 +1,18 @@
-# Cabeceras por defecto y seguridad
+Ôªø# Cabeceras por defecto y seguridad
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://www.instagram.com https://www.tiktok.com https://platform.twitter.com; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://www.instagram.com https://www.tiktok.com https://platform.twitter.com https://w.soundcloud.com https://www.ivoox.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   X-XSS-Protection: 0
 
 # Cache agresiva para assets generados por Astro
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache agresiva para assets est·ticos
+# Cache agresiva para assets est√°ticos
 /img/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -22,7 +22,6 @@
 /video/*
   Cache-Control: public, max-age=31536000, immutable
 
-# La zona socios se controla vÌa Cloudflare Access
+# La zona socios se controla v√≠a Cloudflare Access
 /socios/*
   Cache-Control: private, max-age=0, must-revalidate
-
