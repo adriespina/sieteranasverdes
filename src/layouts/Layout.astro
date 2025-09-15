@@ -45,7 +45,7 @@ const canonical = m?.canonical;
 const noindex = m?.noindex ?? false;
 
 // Compute site/url with proper fallback
-const site = Astro.site ?? new URL("https://sieteranasverdes.es");
+const site = Astro.site ?? new URL("https://sieteranasverdes.com");
 const url = new URL(Astro.url.pathname, site);
 const ogImage = new URL(image, site).toString();
 // JSON-LD generado dinámicamente para LocalBusiness
