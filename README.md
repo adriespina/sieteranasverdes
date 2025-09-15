@@ -300,3 +300,7 @@ Initially created by **Arthelokyo** and maintained by a community of [contributo
 ## License
 
 **AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+
+## Cloudflare Access para /socios
+
+Consulte [docs/cloudflare-access.md](docs/cloudflare-access.md) para proteger el �rea /socios/\*\* con Cloudflare Access (Zero Trust) al desplegar en Cloudflare Pages.
