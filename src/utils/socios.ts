@@ -41,7 +41,8 @@ const getNormalizedPost = async (post: CollectionEntry<"socio">): Promise<Post> 
   const { Content, remarkPluginFrontmatter } = await render(post);
 
   const {
-    publishDate: rawPublishDate = new Date(),
+    publishDate: rawPublishDate,
+    date: rawDate,
     updateDate: rawUpdateDate,
     title,
     excerpt,
@@ -53,9 +54,13 @@ const getNormalizedPost = async (post: CollectionEntry<"socio">): Promise<Post> 
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(id);
-  const publishDate = new Date(rawPublishDate);
-  const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
+  // Normalizamos el slug usando solo el nombre de archivo (sin carpetas anio/mes ni extension)
+  const slugSource = post.slug?.split("/").pop() ?? id.split("/").pop() ?? id;
+  const slug = cleanSlug(slugSource.replace(/\.[^/.]+$/, ""));
+
+  const ensureDate = (value?: Date | string) => (value ? new Date(value) : undefined);
+  const publishDate = ensureDate(rawPublishDate ?? rawDate) ?? new Date();
+  const updateDate = ensureDate(rawUpdateDate);
 
   const category = rawCategory
     ? {
