@@ -20,7 +20,6 @@ const url = `https://twitter.com/i/status/${id}`;
     const s = document.createElement("script");
     s.async = true;
     s.src = src;
-    s.charset = "utf-8";
     document.head.appendChild(s);
   } else if (window.twttr?.widgets?.load) {
     window.twttr.widgets.load();
