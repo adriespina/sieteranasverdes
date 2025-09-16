@@ -13,14 +13,10 @@ const SOCIOS_POST_PERMALINK_PATTERN = `${SOCIOS_BASE}/%slug%`;
 const SOCIOS_POSTS_PER_PAGE = 6;
 
 const generatePermalink = async ({
-  id,
   slug,
-  publishDate,
   category,
 }: {
-  id: string;
   slug: string;
-  publishDate: Date;
   category: string | undefined;
 }) => {
   // Para socios usamos un patrón fijo bajo /socios/%slug%
@@ -55,7 +51,8 @@ const getNormalizedPost = async (post: CollectionEntry<"socio">): Promise<Post> 
   } = data;
 
   // Normalizamos el slug usando solo el nombre de archivo (sin carpetas anio/mes ni extension)
-  const slugSource = post.slug?.split("/").pop() ?? id.split("/").pop() ?? id;
+  const entrySlug = (post as { slug?: string }).slug;
+  const slugSource = entrySlug?.split("/").pop() ?? id.split("/").pop() ?? id;
   const slug = cleanSlug(slugSource.replace(/\.[^/.]+$/, ""));
 
   const ensureDate = (value?: Date | string) => (value ? new Date(value) : undefined);
@@ -77,7 +74,7 @@ const getNormalizedPost = async (post: CollectionEntry<"socio">): Promise<Post> 
   return {
     id: id,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
+    permalink: await generatePermalink({ slug, category: category?.slug }),
 
     publishDate: publishDate,
     updateDate: updateDate,

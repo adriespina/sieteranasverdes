@@ -1,25 +1,24 @@
 ---
 export interface Props {
-  url?: string;      // Ej: https://www.tiktok.com/@soul_mind_body/video/6964433291302718725
-  id?: string;       // Alternativa: pasar solo el ID numérico
-  title?: string;    // Accesibilidad
+  url?: string; // Ej: https://www.tiktok.com/@soul_mind_body/video/6964433291302718725
+  id?: string; // Alternativa: pasar solo el ID numérico
+  title?: string; // Accesibilidad
 }
 
 const { url, id, title = "Vídeo de TikTok" } = Astro.props;
 
 // Extrae ID y handle desde la URL si no se pasan explícitamente
-const videoId =
-  id ??
-  (url ? (url.match(/video\/(\d+)/)?.[1] ?? "") : "");
+const videoId = id ?? (url ? (url.match(/video\/(\d+)/)?.[1] ?? "") : "");
 
-const handle =
-  url ? (url.match(/tiktok\.com\/@([^/]+)/)?.[1] ?? "tiktok") : "tiktok";
+const handle = url ? (url.match(/tiktok\.com\/@([^/]+)/)?.[1] ?? "tiktok") : "tiktok";
 
 // Construye un cite válido aunque solo pasen el id
 const cite = url ?? `https://www.tiktok.com/@${handle}/video/${videoId}`;
 ---
 
-<div class="relative w-full overflow-hidden rounded-2xl border bg-white/70 p-0 shadow ring-1 ring-black/5">
+<div
+  class="relative w-full overflow-hidden rounded-2xl border bg-white/70 p-0 shadow ring-1 ring-black/5"
+>
   <blockquote
     class="tiktok-embed"
     cite={cite}
@@ -38,5 +37,4 @@ const cite = url ?? `https://www.tiktok.com/@${handle}/video/${videoId}`;
 </div>
 
 <!-- Cargar el script del embed (idempotente; el navegador evita duplicados reales) -->
-<script async src="https://www.tiktok.com/embed.js"></script>
-
+<script is:inline async src="https://www.tiktok.com/embed.js"></script>
