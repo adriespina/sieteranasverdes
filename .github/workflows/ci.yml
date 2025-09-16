@@ -19,11 +19,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Enable pnpm
-        run: corepack enable pnpm
-
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Build
-        run: pnpm build
+        run: npm run build
