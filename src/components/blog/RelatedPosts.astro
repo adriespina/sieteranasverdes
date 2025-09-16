@@ -18,9 +18,9 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
   APP_BLOG.isRelatedPostsEnabled && relatedPosts.length ? (
     <section class="mx-auto max-w-5xl px-4 py-10 md:py-14">
       <div class="mb-6 flex items-baseline justify-between">
-        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Related Posts</h2>
+        <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Publicaciones relacionadas</h2>
         <a href={getBlogPermalink()} class="btn text-sm">
-          View All Posts
+          Ver todas las entradas
         </a>
       </div>
       <ul class="grid gap-4 sm:grid-cols-2">
