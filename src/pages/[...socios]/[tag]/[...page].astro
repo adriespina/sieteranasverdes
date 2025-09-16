@@ -20,13 +20,13 @@ const { page, tag } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Posts por tag '${tag.title}'${currentPage > 1 ? ` · Página ${currentPage}` : ""}`,
+  title: `Publicaciones por etiqueta "${tag.title}"${currentPage > 1 ? ` · Página ${currentPage}` : ""}`,
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-4 py-12 sm:py-16 md:px-6 lg:py-20">
-    <Headline>Tag: {tag.title}</Headline>
+    <Headline>Etiqueta: {tag.title}</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
