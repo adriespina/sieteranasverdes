@@ -47,7 +47,7 @@ import { UI } from "astrowind:config";
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
 
-    attachEvent("#header nav", "click", function () {
+    attachEvent("#header nav a", "click", function () {
       document.querySelector("[data-aw-toggle-menu]")?.classList.remove("expanded");
       document.body.classList.remove("overflow-hidden");
       document.getElementById("header")?.classList.remove("h-screen");
