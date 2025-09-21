@@ -310,3 +310,10 @@ Consulte [docs/cloudflare-access.md](docs/cloudflare-access.md) para proteger el
 - La rama `main` se valida con CI (ver `.github/workflows/ci.yml`) usando Node 20 y `pnpm build`.
 - Para desplegar autom�ticamente en Cloudflare Pages, configura los secretos `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_PAGES_PROJECT` (nombre del proyecto) usados por `.github/workflows/deploy.yml`.
 - El archivo `public/_headers` define cabeceras de seguridad y pol�ticas de cach� que Cloudflare Pages aplicar� al origen est�tico.
+
+## Anal�tica y verificaci�n en buscadores
+
+- A�ade los valores de `PUBLIC_CF_WEB_ANALYTICS_TOKEN`, `PUBLIC_GOOGLE_SITE_VERIFICATION` y `PUBLIC_BING_SITE_VERIFICATION` en Cloudflare Pages ? Settings ? Environment variables (Production y Preview si aplica).
+- Para pruebas locales, crea un fichero `.env` con las mismas claves (no lo a�adas a git si contiene tokens reales).
+- Google y Bing detectar�n las metas de verificaci�n autom�ticamente tras el despliegue. Env�a el sitemap `https://sieteranasverdes.com/sitemap-index.xml` desde Search Console y Bing Webmaster Tools para acelerar la indexaci�n.
+- El script de Cloudflare Web Analytics solo se carga en producci�n cuando existe el token p�blico.

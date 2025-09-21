@@ -1,0 +1,15 @@
+﻿---
+/** Carga Cloudflare Web Analytics solo en producción y si hay token */
+const token = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN;
+const enabled = import.meta.env.PROD && !!token;
+---
+
+{
+  enabled ? (
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={JSON.stringify({ token })}
+    />
+  ) : null
+}
