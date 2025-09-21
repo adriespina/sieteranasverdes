@@ -18,9 +18,8 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
-
 const metadata = {
-  title: `Socios${currentPage > 1 ? ` · Página ${currentPage}` : ""}`,
+  title: `Comunidad${currentPage > 1 ? ` - P�gina ${currentPage}` : ""}`,
   openGraph: {
     type: "blog",
   },
@@ -29,7 +28,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-4xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>Socios</Headline>
+    <Headline subtitle="Contenido para miembros de la comunidad Siete Ranas Verdes."
+      >Comunidad</Headline
+    >
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
