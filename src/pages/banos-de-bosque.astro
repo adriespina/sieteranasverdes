@@ -44,8 +44,8 @@ import Layout from "~/layouts/BaseLayout.astro";
         <p class="mt-3 leading-relaxed text-gray-800/90">
           Caminar entre Ã¡rboles puede parecer algo sencillo, pero cuando lo hacemos con presencia y
           conciencia se convierte en un viaje profundo hacia dentro. Los BaÃ±os de Bosque, conocidos
-          en JapÃ³n como Shinrin-Yoku, son una prÃ¡ctica que invita a sumergirse en la atmÃ³sfera
-          del bosque, abriendo los sentidos para entrar en diÃ¡logo con la naturaleza.
+          en JapÃ³n como <em>Shinrin-Yoku</em>, son una prÃ¡ctica que invita a sumergirse en la
+          atmÃ³sfera del bosque, abriendo los sentidos para entrar en diÃ¡logo con la naturaleza.
         </p>
         <p class="mt-3 leading-relaxed text-gray-800/90">
           No se trata de hacer senderismo, sino de permitir que el entorno natural nos acaricie: el
@@ -63,68 +63,263 @@ import Layout from "~/layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 2) Beneficios (imagen: bano1) â€” versiÃ³n mejorada para mejor legibilidad -->
-  <section id="beneficios" class="cv-auto bg-brand-50 py-12 md:py-16">
-    <div class="mx-auto grid max-w-6xl items-start gap-10 px-4 lg:grid-cols-[1fr_560px]">
-      <!-- Columna de texto (mÃ¡s ancha y en una sola columna) -->
-      <div data-reveal>
+  <!-- 2) Beneficios — Shinrin-Yoku (3 tarjetas arriba + 2 abajo, sin huecos) -->
+  <section id="beneficios" class="bg-brand-50 py-12 md:py-16">
+    <div class="mx-auto grid max-w-6xl px-4 lg:grid-cols-12 lg:gap-12">
+      <!-- Columna de texto/tarjetas -->
+      <div class="space-y-6 lg:col-span-7" data-reveal>
         <h2 class="text-3xl font-extrabold text-brand-900 md:text-4xl">Beneficios para la salud</h2>
-        <p class="mt-4 text-lg leading-relaxed text-gray-800/90">
-          La evidencia apunta a mejoras psicolÃ³gicas y fisiolÃ³gicas cuando pasamos tiempo en
-          entornos naturales. De forma resumida:
+        <p class="text-lg leading-relaxed text-gray-800/90">
+          La investigación científica muestra que la práctica del <em>Shinrin-Yoku</em> genera cambios
+          fisiológicos y emocionales que favorecen un estado de homeostasis: un equilibrio dinámico del
+          organismo en el que cuerpo y mente se autorregulan de forma natural.
         </p>
 
-        <ul class="mt-8 space-y-5">
-          <li class="rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5">
-            <h3 class="text-xl font-semibold text-brand-900">ReducciÃ³n del estrÃ©s</h3>
+        <ul class="grid gap-5 [grid-auto-rows:minmax(0,1fr)] sm:grid-cols-2 lg:grid-cols-6">
+          <!-- Fila superior -->
+          <li
+            class="h-full rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5 lg:col-span-2"
+          >
+            <h3 class="text-xl font-semibold text-brand-900">Equilibrio general</h3>
             <p class="mt-2 leading-relaxed text-gray-700">
-              Disminuye cortisol y la activaciÃ³n simpÃ¡tica, promoviendo relajaciÃ³n y claridad.
+              El Shinrin-Yoku favorece una homeostasis que armoniza las funciones corporales y
+              mentales.
+            </p>
+          </li>
+          <li
+            class="h-full rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5 lg:col-span-2"
+          >
+            <h3 class="text-xl font-semibold text-brand-900">Respuesta fisiológica saludable</h3>
+            <p class="mt-2 leading-relaxed text-gray-700">
+              Descienden el cortisol, la presión arterial y la frecuencia cardiaca mientras aumenta
+              la actividad parasimpática.
+            </p>
+          </li>
+          <li
+            class="h-full rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5 lg:col-span-2"
+          >
+            <h3 class="text-xl font-semibold text-brand-900">Sistema inmunitario alerta</h3>
+            <p class="mt-2 leading-relaxed text-gray-700">
+              Se incrementa la presencia de células <em>NK</em> y marcadores defensivos que ayudan a
+              prevenir infecciones.
             </p>
           </li>
 
-          <li class="rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5">
-            <h3 class="text-xl font-semibold text-brand-900">Salud cardiovascular</h3>
+          <!-- Fila inferior -->
+          <li
+            class="h-full rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5 sm:col-span-2 lg:col-span-3"
+          >
+            <h3 class="text-xl font-semibold text-brand-900">Calma emocional</h3>
             <p class="mt-2 leading-relaxed text-gray-700">
-              Ayuda a optimizar presiÃ³n arterial y parÃ¡metros hemodinÃ¡micos en poblaciÃ³n
-              general.
+              Disminuyen la rumiación, la ansiedad y el cansancio mental. Aparecen serenidad,
+              claridad y sensación de ligereza.
             </p>
           </li>
-
-          <li class="rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5">
-            <h3 class="text-xl font-semibold text-brand-900">Sistema inmunolÃ³gico</h3>
+          <li
+            class="h-full rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5 sm:col-span-2 lg:col-span-3"
+          >
+            <h3 class="text-xl font-semibold text-brand-900">Integración cuerpo–mente</h3>
             <p class="mt-2 leading-relaxed text-gray-700">
-              Incrementa la actividad de cÃ©lulas NK y otros marcadores de defensa frente a
-              infecciones.
-            </p>
-          </li>
-
-          <li class="rounded-2xl bg-white/95 p-6 shadow-sm ring-1 ring-black/5">
-            <h3 class="text-xl font-semibold text-brand-900">Salud mental</h3>
-            <p class="mt-2 leading-relaxed text-gray-700">
-              Reduce rumiaciÃ³n y sÃ­ntomas de ansiedad y depresiÃ³n, favoreciendo el bienestar.
+              La suma de ajustes fisiológicos y emocionales facilita una autorregulación global del
+              organismo.
             </p>
           </li>
         </ul>
       </div>
 
-      <!-- Columna de imagen (bano1) -->
-      <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-        <picture>
-          <source
-            srcset="/img/bano1-480.webp 480w, /img/bano1-768.webp 768w, /img/bano1-1080.webp 1080w, /img/bano1-1600.webp 1600w"
-            sizes="(min-width: 1024px) 560px, 100vw"
-            type="image/webp"
-          />
-          <img
-            src="/img/bano1.jpg"
-            alt="BaÃ±o de bosque guiado, conexiÃ³n con la naturaleza"
-            loading="lazy"
-            decoding="async"
-            class="h-full w-full object-cover brightness-[1.07] saturate-[1.02]"
-          />
-        </picture>
-        <!-- velo sutil para integrar con el fondo -->
-        <div class="pointer-events-none absolute inset-0 bg-white/20"></div>
+      <!-- Columna de imágenes -->
+      <div class="lg:col-span-5" data-reveal>
+        <!-- Carrusel móvil -->
+        <div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:hidden">
+          <figure
+            class="min-w-[78%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+          >
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion2-480.webp 480w, /img/banosbosqueseccion2-768.webp 768w, /img/banosbosqueseccion2-1080.webp 1080w, /img/banosbosqueseccion2-1600.webp 1600w"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion2.jpeg"
+                alt="Detalle de corteza húmeda"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure
+            class="min-w-[78%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+          >
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion3-480.webp 480w, /img/banosbosqueseccion3-768.webp 768w, /img/banosbosqueseccion3-1080.webp 1080w, /img/banosbosqueseccion3-1600.webp 1600w"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion3.jpeg"
+                alt="Paseo en silencio entre árboles"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure
+            class="min-w-[78%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+          >
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion4.jpeg"
+                alt="Respirar la atmósfera del bosque"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure
+            class="min-w-[78%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+          >
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion5-480.webp 480w, /img/banosbosqueseccion5-768.webp 768w, /img/banosbosqueseccion5-1080.webp 1080w, /img/banosbosqueseccion5-1600.webp 1600w"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion5.jpeg"
+                alt="Texturas, hojas y musgo"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure
+            class="min-w-[78%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+          >
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion6-480.webp 480w, /img/banosbosqueseccion6-768.webp 768w, /img/banosbosqueseccion6-1080.webp 1080w, /img/banosbosqueseccion6-1600.webp 1600w"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion6.jpeg"
+                alt="Luz filtrada entre las copas"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </figure>
+        </div>
+
+        <!-- Collage desktop -->
+        <div class="sticky top-24 hidden sm:block">
+          <div class="aspect-[3/4]">
+            <div class="grid h-full w-full grid-cols-2 grid-rows-6 gap-4">
+              <figure
+                class="col-span-1 row-span-6 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+              >
+                <picture>
+                  <source
+                    srcset="/img/banosbosqueseccion2-480.webp 480w, /img/banosbosqueseccion2-768.webp 768w, /img/banosbosqueseccion2-1080.webp 1080w, /img/banosbosqueseccion2-1600.webp 1600w"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/img/banosbosqueseccion2.jpeg"
+                    alt="Detalle de corteza húmeda"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover"
+                  />
+                </picture>
+              </figure>
+              <figure
+                class="col-span-1 row-span-3 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+              >
+                <picture>
+                  <source
+                    srcset="/img/banosbosqueseccion3-480.webp 480w, /img/banosbosqueseccion3-768.webp 768w, /img/banosbosqueseccion3-1080.webp 1080w, /img/banosbosqueseccion3-1600.webp 1600w"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/img/banosbosqueseccion3.jpeg"
+                    alt="Paseo en silencio entre árboles"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover"
+                  />
+                </picture>
+              </figure>
+              <figure
+                class="col-span-1 row-span-2 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+              >
+                <picture>
+                  <source
+                    srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/img/banosbosqueseccion4.jpeg"
+                    alt="Respirar la atmósfera del bosque"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover"
+                  />
+                </picture>
+              </figure>
+              <figure
+                class="col-span-1 row-span-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+              >
+                <picture>
+                  <source
+                    srcset="/img/banosbosqueseccion5-480.webp 480w, /img/banosbosqueseccion5-768.webp 768w, /img/banosbosqueseccion5-1080.webp 1080w, /img/banosbosqueseccion5-1600.webp 1600w"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/img/banosbosqueseccion5.jpeg"
+                    alt="Texturas, hojas y musgo"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover"
+                  />
+                </picture>
+              </figure>
+              <figure
+                class="col-span-1 row-span-2 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
+              >
+                <picture>
+                  <source
+                    srcset="/img/banosbosqueseccion6-480.webp 480w, /img/banosbosqueseccion6-768.webp 768w, /img/banosbosqueseccion6-1080.webp 1080w, /img/banosbosqueseccion6-1600.webp 1600w"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/img/banosbosqueseccion6.jpeg"
+                    alt="Luz filtrada entre las copas"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover"
+                  />
+                </picture>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
