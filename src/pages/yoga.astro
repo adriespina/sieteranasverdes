@@ -6,19 +6,26 @@ import Layout from "~/layouts/BaseLayout.astro";
   title="Yoga | Siete Ranas Verdes"
   description="Prácticas de yoga en Navia — respiración, asanas y relajación"
 >
-  <!-- Cabecera simple -->
-  <section class="py-12 md:py-16">
-    <div class="mx-auto max-w-5xl px-4">
+  <!-- Cabecera simple (alineada con la sección 1 y sin hueco a la derecha) -->
+  <section class="pb-4 pt-8 md:pb-6 md:pt-10">
+    <div class="mx-auto max-w-6xl px-4">
+      <!-- antes: max-w-5xl -->
       <h1 class="text-4xl font-extrabold text-brand-900 md:text-5xl">Yoga</h1>
-      <p class="mt-3 max-w-2xl text-gray-700">Hatha Yoga. Sesiones para todos los niveles.</p>
+      <p class="mt-3 text-gray-700 md:max-w-3xl lg:max-w-4xl xl:max-w-none">
+        <!-- antes: max-w-2xl -->
+        Una práctica que combina respiración, movimiento y relajación. Fortalece el cuerpo, serena la
+        mente y aporta equilibrio al día a día. Nuestras clases están adaptadas a cualquier nivel, para
+        que cada persona encuentre su propio ritmo y bienestar.
+      </p>
     </div>
   </section>
 
-  <!-- Sección 1 -->
-  <section class="bg-white py-16 md:py-20">
+  <!-- Sección 1 (pegada con padding pequeño arriba) -->
+  <section class="bg-white pb-16 pt-6 md:pb-20 md:pt-8">
     <div
-      class="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[1.05fr_minmax(0,0.95fr)] lg:items-center lg:gap-16"
+      class="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[1.05fr_minmax(0,0.95fr)] lg:items-center lg:gap-14"
     >
+      <!-- Imagen -->
       <div
         class="relative overflow-hidden rounded-3xl bg-brand-100/40 shadow-xl ring-1 ring-brand-900/10"
         data-reveal
@@ -42,7 +49,9 @@ import Layout from "~/layouts/BaseLayout.astro";
           />
         </picture>
       </div>
-      <div class="mt-10 space-y-6 lg:mt-0" data-reveal>
+
+      <!-- Texto -->
+      <div class="mt-6 space-y-6 md:mt-8 lg:mt-0" data-reveal>
         <span
           class="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700"
         >
@@ -63,6 +72,7 @@ import Layout from "~/layouts/BaseLayout.astro";
   <!-- Sección 2 -->
   <section class="bg-brand-50 py-16 md:py-20">
     <div class="mx-auto max-w-6xl space-y-12 px-4">
+      <!-- Cabecera + imagen -->
       <div class="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
         <div class="space-y-6" data-reveal>
           <span
@@ -101,19 +111,34 @@ import Layout from "~/layouts/BaseLayout.astro";
           </div>
         </div>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" data-reveal>
-        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+
+      <!-- Tarjetas: carrusel móvil con alturas iguales + grid 3/2 en escritorio -->
+      <div
+        class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 md:grid md:snap-none md:grid-cols-6 md:gap-6 md:overflow-visible md:[grid-auto-rows:1fr]"
+        data-reveal
+      >
+        <!-- Clases comunes para tarjeta:
+           - min-h fija en móvil para igualar alturas
+           - en md quitamos la min-h para que el grid se auto-iguale con auto-rows:1fr -->
+        <!-- 1 -->
+        <article
+          class="flex h-full min-h-[380px] min-w-[85%] snap-start flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:min-w-[70%] md:col-span-2 md:min-h-0 md:min-w-0"
+        >
           <h3 class="text-lg font-semibold text-brand-900">Calma en medio de la tormenta</h3>
           <p class="mt-3 text-gray-800/90">
             Al respirar profundo y movernos con suavidad, el cuerpo activa su sistema de descanso.
             Los niveles de cortisol —la hormona del estrés— descienden y el ruido mental se disuelve
             poco a poco (Streeter et al., 2012).
           </p>
-          <p class="mt-3 text-sm font-medium text-brand-700">
+          <p class="mt-3 mt-auto text-sm font-medium text-brand-700">
             Es como abrir una ventana en un día cargado: entra el aire fresco de la serenidad.
           </p>
         </article>
-        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+
+        <!-- 2 -->
+        <article
+          class="flex h-full min-h-[380px] min-w-[85%] snap-start flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:min-w-[70%] md:col-span-2 md:min-h-0 md:min-w-0"
+        >
           <h3 class="text-lg font-semibold text-brand-900">
             Un refugio para la mente y el corazón
           </h3>
@@ -122,49 +147,64 @@ import Layout from "~/layouts/BaseLayout.astro";
             sensación de bienestar (Cramer et al., 2013). Es el efecto de escucharnos, tratarnos con
             amabilidad y soltar lo que pesa.
           </p>
-          <p class="mt-3 text-sm font-medium text-brand-700">
+          <p class="mt-3 mt-auto text-sm font-medium text-brand-700">
             Cuando la mente se aquieta, el corazón respira más ligero.
           </p>
         </article>
-        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+
+        <!-- 3 -->
+        <article
+          class="flex h-full min-h-[380px] min-w-[85%] snap-start flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:min-w-[70%] md:col-span-2 md:min-h-0 md:min-w-0"
+        >
           <h3 class="text-lg font-semibold text-brand-900">Cuerpo fuerte, energía renovada</h3>
           <p class="mt-3 text-gray-800/90">
             Las posturas despiertan músculos dormidos, alivian tensiones y mejoran la postura.
             También cuidan del corazón regulando la presión arterial y fortaleciendo el sistema
             cardiovascular (Innes et al., 2005).
           </p>
-          <p class="mt-3 text-sm font-medium text-brand-700">
+          <p class="mt-3 mt-auto text-sm font-medium text-brand-700">
             El cuerpo se vuelve flexible y vital, listo para disfrutar de lo cotidiano.
           </p>
         </article>
-        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+
+        <!-- 4 (fila 2, 3 columnas) -->
+        <article
+          class="flex h-full min-h-[380px] min-w-[85%] snap-start flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:min-w-[70%] md:col-span-3 md:min-h-0 md:min-w-0"
+        >
           <h3 class="text-lg font-semibold text-brand-900">Dormir como un río tranquilo</h3>
           <p class="mt-3 text-gray-800/90">
             La práctica de respiración y relajación favorece un sueño profundo y reparador, incluso
-            en personas con insomnio (Chen et al., 2019). Dormir deja de ser una lucha y se
-            convierte en un suave viaje hacia el descanso.
+            en personas con insomnio (Chen et al., 2019).
           </p>
+          <p class="mt-3 mt-auto text-sm font-medium text-brand-700">
+            Dormir deja de ser una lucha y se convierte en un suave viaje hacia el descanso.
+          </p>
+          <span class="mt-auto"></span>
         </article>
-        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 xl:col-span-2">
+
+        <!-- 5 (fila 2, 3 columnas) -->
+        <article
+          class="flex h-full min-h-[380px] min-w-[85%] snap-start flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:min-w-[70%] md:col-span-3 md:min-h-0 md:min-w-0"
+        >
           <h3 class="text-lg font-semibold text-brand-900">Claridad y concentración</h3>
           <p class="mt-3 text-gray-800/90">
             El yoga entrena la atención plena, ayudando a enfocar la mente en lo esencial.
             Investigaciones muestran cambios en la conectividad cerebral que favorecen la memoria y
             la concentración (Gothe et al., 2019).
           </p>
-          <p class="mt-3 text-sm font-medium text-brand-700">
+          <p class="mt-3 mt-auto text-sm font-medium text-brand-700">
             La mente se afila como un cielo despejado después de la tormenta.
           </p>
         </article>
       </div>
     </div>
   </section>
-  <!-- Sección 3 -->
+
+  <!-- Sección 3 (rediseño moderno y equilibrado, con fixes) -->
   <section class="bg-white py-16 md:py-20">
-    <div
-      class="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-16"
-    >
-      <div class="order-2 space-y-6 lg:order-1" data-reveal>
+    <div class="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-12 lg:gap-10">
+      <!-- Columna izquierda: título + pasos -->
+      <div class="space-y-6 lg:col-span-7" data-reveal>
         <span
           class="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700"
         >
@@ -176,67 +216,160 @@ import Layout from "~/layouts/BaseLayout.astro";
           conciencia. El tiempo se divide en diferentes momentos que se entrelazan como un río
           fluido.
         </p>
-        <div class="space-y-5">
-          <article class="rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm">
+
+        <!-- Pasos: 2 columnas en desktop, filas con altura auto (sin huecos) -->
+        <div class="grid gap-5 sm:grid-cols-2 sm:items-start sm:[grid-auto-rows:auto]">
+          <!-- Paso 1 -->
+          <article
+            class="flex flex-col rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm"
+          >
+            <div
+              class="mb-3 inline-flex size-9 items-center justify-center rounded-full bg-brand-100 font-bold text-brand-700"
+            >
+              1
+            </div>
             <h3 class="text-xl font-semibold text-brand-900">Pranayama y conciencia corporal</h3>
             <p class="mt-3 leading-relaxed text-gray-800/90">
               Comenzamos afinando la respiración, puente entre la mente y el cuerpo. A través del
               pranayama y de la escucha interna aprendemos a soltar tensiones, a enraizarnos en el
               presente y a preparar el terreno para la práctica.
             </p>
+            <div class="mt-4 flex items-center gap-2 text-sm text-brand-700">
+              <span class="i-lucide-sparkles"></span><span>Respira, siente y aterriza.</span>
+            </div>
           </article>
-          <article class="rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm">
+
+          <!-- Paso 2 -->
+          <article
+            class="flex flex-col rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm"
+          >
+            <div
+              class="mb-3 inline-flex size-9 items-center justify-center rounded-full bg-brand-100 font-bold text-brand-700"
+            >
+              2
+            </div>
             <h3 class="text-xl font-semibold text-brand-900">Asanas: movimiento y presencia</h3>
             <p class="mt-3 leading-relaxed text-gray-800/90">
-              Luego entramos en la secuencia de posturas. Cada movimiento se acompasa con la
-              respiración, generando fuerza, flexibilidad y equilibrio. No buscamos la perfección
-              externa, sino la sensación interna de habitar cada postura con amabilidad.
+              Entramos en la secuencia de posturas. Cada movimiento se acompasa con la respiración,
+              generando fuerza, flexibilidad y equilibrio. No buscamos perfección externa, sino
+              habitar cada postura con amabilidad.
             </p>
+            <div class="mt-4 flex items-center gap-2 text-sm text-brand-700">
+              <span class="i-lucide-activity"></span><span>Fluir sin forzar.</span>
+            </div>
           </article>
-          <article class="rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm">
+
+          <!-- Paso 3 (ocupa dos columnas, sin estirarse) -->
+          <article
+            class="flex flex-col rounded-3xl border border-brand-900/10 bg-white p-6 shadow-sm sm:col-span-2 sm:self-start"
+          >
+            <div
+              class="mb-3 inline-flex size-9 items-center justify-center rounded-full bg-brand-100 font-bold text-brand-700"
+            >
+              3
+            </div>
             <h3 class="text-xl font-semibold text-brand-900">Relajación final</h3>
             <p class="mt-3 leading-relaxed text-gray-800/90">
-              Terminamos con un tiempo de descanso profundo. La relajación final, a veces acompañada
-              de visualizaciones guiadas, permite que todo lo practicado se integre. Es el momento
-              donde la mente descansa y el cuerpo se regenera, dejando una sensación de serenidad.
+              Cerramos con descanso profundo y, a veces, visualizaciones guiadas. Es el momento
+              donde la mente se aquieta y el cuerpo integra la práctica, dejando una sensación de
+              serenidad.
             </p>
+            <div class="mt-4 flex items-center gap-2 text-sm text-brand-700">
+              <span class="i-lucide-moon"></span><span>Integra y descansa.</span>
+            </div>
           </article>
         </div>
+
         <p class="text-lg leading-relaxed text-gray-800/90">
-          Cada sesión es diferente, como lo es cada persona y cada día. Lo que se repite siempre es
-          la intención: crear un espacio de cuidado, escucha y conexión contigo misma o contigo
-          mismo.
+          Cada sesión es diferente, como lo es cada persona y cada día. La intención es crear un
+          espacio de cuidado, escucha y conexión contigo misma o contigo mismo.
         </p>
         <p class="text-lg leading-relaxed text-gray-800/90">
-          Ven a probar, sin expectativas. Solo trae tu cuerpo, tu respiración y tu curiosidad. Lo
-          demás lo vamos descubriendo.
+          Ven a probar, sin expectativas. Solo trae tu cuerpo, tu respiración y tu curiosidad.
         </p>
+
         <div>
           <a href="/#contacto" class="btn">Quiero más info</a>
         </div>
       </div>
-      <div class="order-1 lg:order-2" data-reveal>
-        <div
-          class="relative overflow-hidden rounded-3xl bg-brand-100/40 shadow-xl ring-1 ring-brand-900/10"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-bl from-brand-900/10 via-transparent to-brand-400/20"
+
+      <!-- Columna derecha: carrusel móvil con tamaño fijo + collage desktop -->
+      <div class="lg:col-span-5" data-reveal>
+        <!-- Carrusel móvil (tamaño corregido y uniforme) -->
+        <div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:hidden">
+          <figure
+            class="relative min-w-[85%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10"
           >
-          </div>
-          <picture>
-            <source
-              srcset="/img/yoga3-480.webp 480w, /img/yoga3-768.webp 768w, /img/yoga3-1080.webp 1080w, /img/yoga3-1600.webp 1600w"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              type="image/webp"
-            />
             <img
               src="/img/yoga3.jpg"
               alt="Relajación guiada final"
-              loading="lazy"
-              decoding="async"
-              class="h-full w-full object-cover"
+              class="aspect-[16/10] h-64 w-full object-cover"
             />
-          </picture>
+            <figcaption
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-3 text-sm text-white"
+            >
+              Relajación guiada
+            </figcaption>
+          </figure>
+          <figure
+            class="relative min-w-[85%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10"
+          >
+            <img
+              src="/img/yoga2.jpg"
+              alt="Respiración y concentración"
+              class="aspect-[16/10] h-64 w-full object-cover"
+            />
+            <figcaption
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-3 text-sm text-white"
+            >
+              Respiración consciente
+            </figcaption>
+          </figure>
+          <figure
+            class="relative min-w-[85%] snap-start overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10"
+          >
+            <img
+              src="/img/yoga1.jpg"
+              alt="Asanas"
+              class="aspect-[16/10] h-64 w-full object-cover"
+            />
+            <figcaption
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-3 text-sm text-white"
+            >
+              Asanas y presencia
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Collage desktop -->
+        <div class="hidden gap-4 sm:grid sm:auto-rows-[1fr] sm:grid-cols-2 md:sticky md:top-24">
+          <div
+            class="relative col-span-2 overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-bl from-brand-900/10 via-transparent to-brand-400/20"
+            >
+            </div>
+            <img
+              src="/img/yoga3.jpg"
+              alt="Relajación guiada final"
+              class="aspect-[16/10] h-full w-full object-cover"
+            />
+          </div>
+          <figure class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10">
+            <img
+              src="/img/yoga2.jpg"
+              alt="Respiración y concentración"
+              class="aspect-[4/3] h-full w-full object-cover"
+            />
+          </figure>
+          <figure class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10">
+            <img
+              src="/img/yoga1.jpg"
+              alt="Asanas"
+              class="aspect-[4/3] h-full w-full object-cover"
+            />
+          </figure>
         </div>
       </div>
     </div>
