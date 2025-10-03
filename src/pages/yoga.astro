@@ -62,106 +62,103 @@ import Layout from "~/layouts/BaseLayout.astro";
 
   <!-- Sección 2 -->
   <section class="bg-brand-50 py-16 md:py-20">
-    <div
-      class="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-16"
-    >
-      <div class="order-2 space-y-6 lg:order-1" data-reveal>
-        <span
-          class="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700"
-        >
-          Cuidar la mente y el cuerpo
-        </span>
-        <h2 class="text-3xl font-bold text-brand-900 md:text-4xl">Equilibrio y bienestar</h2>
-        <p class="text-lg leading-relaxed text-gray-800/90">
-          El yoga no solo se practica con el cuerpo. Cada respiración y cada movimiento consciente
-          es una invitación a volver a casa, a ese espacio interior donde todo se calma. Lo que la
-          tradición intuía, hoy la ciencia lo confirma: el yoga transforma el sistema nervioso, la
-          mente y las emociones.
-        </p>
-        <div class="grid gap-6 sm:grid-cols-2">
-          <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
-            <h3 class="text-lg font-semibold text-brand-900">Calma en medio de la tormenta</h3>
-            <p class="mt-3 text-gray-800/90">
-              Al respirar profundo y movernos con suavidad, el cuerpo activa su sistema de descanso.
-              Los niveles de cortisol —la hormona del estrés— descienden y el ruido mental se
-              disuelve poco a poco (Streeter et al., 2012).
-            </p>
-            <p class="mt-3 text-sm font-medium text-brand-700">
-              Es como abrir una ventana en un día cargado: entra el aire fresco de la serenidad.
-            </p>
-          </article>
-          <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
-            <h3 class="text-lg font-semibold text-brand-900">
-              Un refugio para la mente y el corazón
-            </h3>
-            <p class="mt-3 text-gray-800/90">
-              Numerosos estudios muestran que el yoga reduce la ansiedad y la depresión, aumentando
-              la sensación de bienestar (Cramer et al., 2013). Es el efecto de escucharnos,
-              tratarnos con amabilidad y soltar lo que pesa.
-            </p>
-            <p class="mt-3 text-sm font-medium text-brand-700">
-              Cuando la mente se aquieta, el corazón respira más ligero.
-            </p>
-          </article>
-          <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
-            <h3 class="text-lg font-semibold text-brand-900">Cuerpo fuerte, energía renovada</h3>
-            <p class="mt-3 text-gray-800/90">
-              Las posturas despiertan músculos dormidos, alivian tensiones y mejoran la postura.
-              También cuidan del corazón regulando la presión arterial y fortaleciendo el sistema
-              cardiovascular (Innes et al., 2005).
-            </p>
-            <p class="mt-3 text-sm font-medium text-brand-700">
-              El cuerpo se vuelve flexible y vital, listo para disfrutar de lo cotidiano.
-            </p>
-          </article>
-          <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
-            <h3 class="text-lg font-semibold text-brand-900">Dormir como un río tranquilo</h3>
-            <p class="mt-3 text-gray-800/90">
-              La práctica de respiración y relajación favorece un sueño profundo y reparador,
-              incluso en personas con insomnio (Chen et al., 2019). Dormir deja de ser una lucha y
-              se convierte en un suave viaje hacia el descanso.
-            </p>
-          </article>
-          <article
-            class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 sm:col-span-2"
+    <div class="mx-auto max-w-6xl space-y-12 px-4">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
+        <div class="space-y-6" data-reveal>
+          <span
+            class="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700"
           >
-            <h3 class="text-lg font-semibold text-brand-900">Claridad y concentración</h3>
-            <p class="mt-3 text-gray-800/90">
-              El yoga entrena la atención plena, ayudando a enfocar la mente en lo esencial.
-              Investigaciones muestran cambios en la conectividad cerebral que favorecen la memoria
-              y la concentración (Gothe et al., 2019).
-            </p>
-            <p class="mt-3 text-sm font-medium text-brand-700">
-              La mente se afila como un cielo despejado después de la tormenta.
-            </p>
-          </article>
+            Cuidar la mente y el cuerpo
+          </span>
+          <h2 class="text-3xl font-bold text-brand-900 md:text-4xl">Equilibrio y bienestar</h2>
+          <p class="text-lg leading-relaxed text-gray-800/90">
+            El yoga no solo se practica con el cuerpo. Cada respiración y cada movimiento consciente
+            es una invitación a volver a casa, a ese espacio interior donde todo se calma. Lo que la
+            tradición intuía, hoy la ciencia lo confirma: el yoga transforma el sistema nervioso, la
+            mente y las emociones.
+          </p>
+        </div>
+        <div class="flex justify-center lg:justify-end" data-reveal>
+          <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-brand-900/10 via-transparent to-white/40"
+            >
+            </div>
+            <picture>
+              <source
+                srcset="/img/yoga2-480.webp 480w, /img/yoga2-768.webp 768w, /img/yoga2-1080.webp 1080w, /img/yoga2-1600.webp 1600w"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/yoga2.jpg"
+                alt="Respiración y concentración"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </div>
         </div>
       </div>
-      <div class="order-1 lg:order-2" data-reveal>
-        <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-900/10">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-brand-900/10 via-transparent to-white/40"
-          >
-          </div>
-          <picture>
-            <source
-              srcset="/img/yoga2-480.webp 480w, /img/yoga2-768.webp 768w, /img/yoga2-1080.webp 1080w, /img/yoga2-1600.webp 1600w"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              type="image/webp"
-            />
-            <img
-              src="/img/yoga2.jpg"
-              alt="Respiración y concentración"
-              loading="lazy"
-              decoding="async"
-              class="h-full w-full object-cover"
-            />
-          </picture>
-        </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" data-reveal>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+          <h3 class="text-lg font-semibold text-brand-900">Calma en medio de la tormenta</h3>
+          <p class="mt-3 text-gray-800/90">
+            Al respirar profundo y movernos con suavidad, el cuerpo activa su sistema de descanso.
+            Los niveles de cortisol —la hormona del estrés— descienden y el ruido mental se disuelve
+            poco a poco (Streeter et al., 2012).
+          </p>
+          <p class="mt-3 text-sm font-medium text-brand-700">
+            Es como abrir una ventana en un día cargado: entra el aire fresco de la serenidad.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+          <h3 class="text-lg font-semibold text-brand-900">
+            Un refugio para la mente y el corazón
+          </h3>
+          <p class="mt-3 text-gray-800/90">
+            Numerosos estudios muestran que el yoga reduce la ansiedad y la depresión, aumentando la
+            sensación de bienestar (Cramer et al., 2013). Es el efecto de escucharnos, tratarnos con
+            amabilidad y soltar lo que pesa.
+          </p>
+          <p class="mt-3 text-sm font-medium text-brand-700">
+            Cuando la mente se aquieta, el corazón respira más ligero.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+          <h3 class="text-lg font-semibold text-brand-900">Cuerpo fuerte, energía renovada</h3>
+          <p class="mt-3 text-gray-800/90">
+            Las posturas despiertan músculos dormidos, alivian tensiones y mejoran la postura.
+            También cuidan del corazón regulando la presión arterial y fortaleciendo el sistema
+            cardiovascular (Innes et al., 2005).
+          </p>
+          <p class="mt-3 text-sm font-medium text-brand-700">
+            El cuerpo se vuelve flexible y vital, listo para disfrutar de lo cotidiano.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10">
+          <h3 class="text-lg font-semibold text-brand-900">Dormir como un río tranquilo</h3>
+          <p class="mt-3 text-gray-800/90">
+            La práctica de respiración y relajación favorece un sueño profundo y reparador, incluso
+            en personas con insomnio (Chen et al., 2019). Dormir deja de ser una lucha y se
+            convierte en un suave viaje hacia el descanso.
+          </p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-brand-900/10 xl:col-span-2">
+          <h3 class="text-lg font-semibold text-brand-900">Claridad y concentración</h3>
+          <p class="mt-3 text-gray-800/90">
+            El yoga entrena la atención plena, ayudando a enfocar la mente en lo esencial.
+            Investigaciones muestran cambios en la conectividad cerebral que favorecen la memoria y
+            la concentración (Gothe et al., 2019).
+          </p>
+          <p class="mt-3 text-sm font-medium text-brand-700">
+            La mente se afila como un cielo despejado después de la tormenta.
+          </p>
+        </article>
       </div>
     </div>
   </section>
-
   <!-- Sección 3 -->
   <section class="bg-white py-16 md:py-20">
     <div
