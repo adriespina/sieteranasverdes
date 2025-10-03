@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layout real
 ---
 
@@ -50,9 +50,12 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
   <section id="intro" class="cv-auto scroll-mt-10 bg-white py-16 md:scroll-mt-12">
     <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 md:grid-cols-2">
       <div class="space-y-4" data-reveal>
-        <h2 class="text-3xl font-bold text-brand-900">Actividades para todos</h2>
+        <h2 class="text-3xl font-bold text-brand-900">Un viaje de vuelta a ti.</h2>
         <p class="text-gray-700">
-          Yoga, pilates suave, baños de bosque y talleres para cuidar cuerpo y mente.
+          Siete Ranas Verdes nace como un lugar donde el Yoga te devuelve al silencio interior, el
+          Pilates fortalece tu centro y aligera tu movimiento, y los Baños de Bosque te reconcilian
+          con la belleza simple de estar vivo/a. Un lugar para transformarte con calma, saltar hacia
+          lo nuevo y volver a ti.
         </p>
       </div>
       <div class="grid grid-cols-2 gap-4" data-reveal>
@@ -497,16 +500,16 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     const heroClaimEl = document.querySelector("[data-hero-claim]");
     const heroClaims = [
       "Bienvenid@ a Siete Ranas Verdes",
-      "🌿 El salto hacia tu bienestar comienza aquí.",
+      "El salto hacia tu bienestar comienza aquí.",
       "Yoga: respira y escucha tu interior.",
       "Pilates: fortalece y equilibra tu cuerpo.",
-      "Baños de bosque: reconecta con la naturaleza.",
+      "Baños de Bosque: reconecta con la naturaleza.",
     ];
     if (heroClaimEl && heroClaims.length > 1) {
       let heroClaimIndex = 0;
       const exitDuration = 260;
       const enterDuration = 320;
-      const rotateEvery = 4200;
+      const rotateEvery = 3200;
       const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
       const setHeroClaim = (nextIndex) => {
