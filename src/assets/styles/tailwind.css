@@ -103,7 +103,15 @@ a {
 }
 /* Brand button override */
 .btn {
-  @apply inline-flex items-center rounded-2xl bg-brand-600 px-4 py-2 text-white shadow-sm hover:bg-brand-700;
+  @apply inline-flex items-center rounded-2xl px-4 py-2 text-white shadow-sm transition-colors duration-200;
+  background-color: #80a943;
+}
+.btn:hover {
+  background-color: #6d9137;
+}
+.btn:focus-visible {
+  outline: 2px solid rgba(128, 169, 67, 0.35);
+  outline-offset: 2px;
 }
 
 /* Utilidad simple de proporción 4:3 (sin plugin) */
