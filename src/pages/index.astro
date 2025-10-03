@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layout real
 ---
 
@@ -35,10 +35,13 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     <!-- Contenido -->
     <div class="relative max-w-3xl px-4 text-center text-white" data-reveal>
       <h1 class="text-5xl font-extrabold drop-shadow md:text-6xl">
-        Bienvenid@ a Siete Ranas Verdes
+        <span class="sr-only">Bienvenid@ a Siete Ranas Verdes</span>
+        <span class="hero-claim inline-block" data-hero-claim aria-hidden="true"
+          >Bienvenid@ a Siete Ranas Verdes</span
+        >
       </h1>
       <p class="mt-4 text-center text-lg md:text-xl">Yoga, Naturaleza y Bienestar en Navia</p>
-      <!-- ¡IMPORTANTE! enlace robusto con /#contacto -->
+      <!-- ¿IMPORTANTE! enlace robusto con /#contacto -->
       <a href="/#contacto" class="btn mt-6">Contactar</a>
     </div>
   </section>
@@ -96,9 +99,13 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     <div class="relative mx-auto grid max-w-7xl items-center gap-8 px-4 md:grid-cols-2">
       <div class="space-y-4" data-reveal>
         <h2 class="text-3xl font-bold text-brand-900">Yoga</h2>
-        <p class="text-gray-800/90">El yoga es más que posturas: es un refugio, un respiro y una herramienta de transformación.</p>
         <p class="text-gray-800/90">
-          La ciencia lo confirma, pero lo más importante es lo que tú sientes en tu propia piel: un bienestar que empieza en la esterilla y se expande a cada rincón de tu vida
+          El yoga es más que posturas: es un refugio, un respiro y una herramienta de
+          transformación.
+        </p>
+        <p class="text-gray-800/90">
+          La ciencia lo confirma, pero lo más importante es lo que tú sientes en tu propia piel: un
+          bienestar que empieza en la esterilla y se expande a cada rincón de tu vida
         </p>
         <a class="btn" href="/yoga">Ver más</a>
       </div>
@@ -487,6 +494,56 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
 
   <!-- Animación leve al hacer scroll -->
   <script is:inline>
+    const heroClaimEl = document.querySelector("[data-hero-claim]");
+    const heroClaims = [
+      "Bienvenid@ a Siete Ranas Verdes",
+      "🌿 El salto hacia tu bienestar comienza aquí.",
+      "Yoga: respira y escucha tu interior.",
+      "Pilates: fortalece y equilibra tu cuerpo.",
+      "Baños de bosque: reconecta con la naturaleza.",
+    ];
+    if (heroClaimEl && heroClaims.length > 1) {
+      let heroClaimIndex = 0;
+      const exitDuration = 260;
+      const enterDuration = 320;
+      const rotateEvery = 4200;
+      const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      const setHeroClaim = (nextIndex) => {
+        heroClaimIndex = nextIndex;
+        heroClaimEl.textContent = heroClaims[heroClaimIndex];
+      };
+
+      const animateHeroClaim = () => {
+        heroClaimEl.classList.add("hero-claim--fade-out");
+        window.setTimeout(() => {
+          setHeroClaim((heroClaimIndex + 1) % heroClaims.length);
+          heroClaimEl.classList.remove("hero-claim--fade-out");
+          heroClaimEl.classList.add("hero-claim--fade-in");
+          window.setTimeout(() => {
+            heroClaimEl.classList.remove("hero-claim--fade-in");
+          }, enterDuration);
+        }, exitDuration);
+      };
+
+      if (!reduceMotionQuery.matches) {
+        let heroTimer = window.setInterval(animateHeroClaim, rotateEvery);
+        reduceMotionQuery.addEventListener?.("change", (event) => {
+          if (event.matches) {
+            window.clearInterval(heroTimer);
+            setHeroClaim(0);
+            heroClaimEl.classList.remove("hero-claim--fade-out", "hero-claim--fade-in");
+          } else {
+            setHeroClaim(0);
+            heroClaimEl.classList.remove("hero-claim--fade-out", "hero-claim--fade-in");
+            heroTimer = window.setInterval(animateHeroClaim, rotateEvery);
+          }
+        });
+      } else {
+        setHeroClaim(0);
+      }
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -503,6 +560,38 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     });
   </script>
   <style is:global>
+    .hero-claim {
+      transition:
+        opacity 0.28s ease,
+        transform 0.28s ease;
+    }
+    .hero-claim--fade-out {
+      opacity: 0;
+      transform: translateY(-0.45em);
+    }
+    .hero-claim--fade-in {
+      animation: hero-claim-in 0.32s ease forwards;
+    }
+    @keyframes hero-claim-in {
+      from {
+        opacity: 0;
+        transform: translateY(0.45em);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-claim,
+      .hero-claim--fade-out,
+      .hero-claim--fade-in {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
     .reveal {
       opacity: 0;
       transform: translateY(16px);
@@ -514,5 +603,3 @@ import BaseLayout from "~/layouts/BaseLayout.astro"; // ajusta la ruta a tu layo
     }
   </style>
 </BaseLayout>
-
-
