@@ -104,13 +104,13 @@ a {
 /* Brand button override */
 .btn {
   @apply inline-flex items-center rounded-2xl px-4 py-2 text-white shadow-sm transition-colors duration-200;
-  background-color: #80a943;
+  background-color: #3cb44a;
 }
 .btn:hover {
-  background-color: #6d9137;
+  background-color: #33993e;
 }
 .btn:focus-visible {
-  outline: 2px solid rgba(128, 169, 67, 0.35);
+  outline: 2px solid rgba(60, 180, 74, 0.35);
   outline-offset: 2px;
 }
 
