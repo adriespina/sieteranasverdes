@@ -278,40 +278,97 @@ import Layout from "~/layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 3) Evidencia científica (imagen: bano3) -->
-  <section id="evidencia" class="cv-auto bg-white py-10 md:py-14">
-    <div class="mx-auto grid max-w-5xl gap-8 px-4 md:grid-cols-2 md:items-center">
-      <div class="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
-        <picture>
-          <source
-            srcset="/img/bano3-480.webp 480w, /img/bano3-768.webp 768w, /img/bano3-1080.webp 1080w, /img/bano3-1600.webp 1600w"
-            sizes="(min-width: 768px) 50vw, 100vw"
-            type="image/webp"
-          />
-          <img
-            src="/img/bano3.jpg"
-            alt="Baño de bosque guiado, conexión con la naturaleza"
-            loading="lazy"
-            decoding="async"
-            class="saturate-105 h-full w-full object-cover opacity-95 blur-[0.5px] brightness-[1.12]"
-          />
-        </picture>
-        <div class="absolute inset-0 bg-white/30"></div>
+  <!-- 3) Evidencia científica — 2 imágenes a la izquierda + referencias APA a la derecha -->
+  <section id="evidencia" class="bg-white py-12 md:py-16">
+    <div class="mx-auto grid max-w-6xl px-4 lg:grid-cols-12 lg:gap-12">
+      <!-- Columna izquierda: 2 imágenes (sticky, mitad y mitad) -->
+      <div class="order-2 lg:order-1 lg:col-span-5" data-reveal>
+        <div class="hidden sm:block">
+          <div class="sticky top-24 grid h-[72vh] grid-rows-2 gap-4">
+            <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+              <picture>
+                <source
+                  srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  type="image/webp"
+                />
+                <img
+                  src="/img/banosbosqueseccion4.jpeg"
+                  alt="Respirar la atmósfera del bosque"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+              </picture>
+            </figure>
+            <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+              <picture>
+                <source
+                  srcset="/img/banosbosqueseccion5-480.webp 480w, /img/banosbosqueseccion5-768.webp 768w, /img/banosbosqueseccion5-1080.webp 1080w, /img/banosbosqueseccion5-1600.webp 1600w"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  type="image/webp"
+                />
+                <img
+                  src="/img/banosbosqueseccion5.jpeg"
+                  alt="Texturas, hojas y musgo"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+              </picture>
+            </figure>
+          </div>
+        </div>
+
+        <div class="space-y-4 sm:hidden">
+          <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
+                sizes="100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion4.jpeg"
+                alt="Respirar la atmósfera del bosque"
+                loading="lazy"
+                decoding="async"
+                class="h-64 w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion5-480.webp 480w, /img/banosbosqueseccion5-768.webp 768w, /img/banosbosqueseccion5-1080.webp 1080w, /img/banosbosqueseccion5-1600.webp 1600w"
+                sizes="100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion5.jpeg"
+                alt="Texturas, hojas y musgo"
+                loading="lazy"
+                decoding="async"
+                class="h-64 w-full object-cover"
+              />
+            </picture>
+          </figure>
+        </div>
       </div>
 
-      <div data-reveal>
+      <!-- Columna derecha: Referencias APA con sangría francesa -->
+      <div class="order-1 space-y-4 lg:order-2 lg:col-span-7" data-reveal>
         <h2 class="text-2xl font-bold text-brand-900 md:text-3xl">Evidencia científica</h2>
-        <p class="mt-3 leading-relaxed text-gray-800/90">
-          Selección de estudios y revisiones relevantes:
-        </p>
-        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-gray-800/90">
-          <li>
-            Bratman, G. N., Hamilton, J. P., Hahn, K. S., Daily, G. C., & Gross, J. J. (2015).
+        <p class="text-gray-800/90">Selección de estudios y revisiones relevantes:</p>
+
+        <ol class="space-y-3 text-sm leading-relaxed text-gray-800/90">
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Bratman, G. N., Hamilton, J. P., Hahn, K. S., Daily, G. C., &amp; Gross, J. J. (2015).
             <em>Nature experience reduces rumination and subgenual prefrontal cortex activation.</em
             >
-            PNAS, 112(28), 8567-8572.
+            <span>PNAS, 112(28), 8567–8572.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1073/pnas.1510459112"
@@ -319,13 +376,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Chen, H., Meng, Z., & Luo, J. (2025). <em
-              >Is forest bathing a panacea for mental health problems?</em
-            >
-            Frontiers in Public Health, 13, 1454992.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Chen, H., Meng, Z., &amp; Luo, J. (2025).
+            <em>Is forest bathing a panacea for mental health problems?</em>
+            <span>Frontiers in Public Health, 13, 1454992.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.3389/fpubh.2025.1454992"
@@ -333,15 +390,19 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Forest Therapy Society. (2005). <em>The effects of forest therapy.</em> Forest Therapy Executive
-            Committee, 2, 67-76.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Forest Therapy Society. (2005).
+            <em>The effects of forest therapy.</em>
+            <span>Forest Therapy Executive Committee, 2, 67–76.</span>
           </li>
-          <li>
-            Gilbert, P. (2014). <em>The origins and nature of compassion focused therapy.</em> BJCP,
-            53(1), 6-41.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Gilbert, P. (2014).
+            <em>The origins and nature of compassion focused therapy.</em>
+            <span>British Journal of Clinical Psychology, 53(1), 6–41.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1111/bjc.12043"
@@ -349,13 +410,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            James, P., Hart, J. E., Banay, R. F., & Laden, F. (2016). <em
-              >Exposure to greenness and mortality…</em
-            >
-            EHP, 124(9), 1344-1352.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            James, P., Hart, J. E., Banay, R. F., &amp; Laden, F. (2016).
+            <em>Exposure to greenness and mortality.</em>
+            <span>Environmental Health Perspectives, 124(9), 1344–1352.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1289/ehp.1510363"
@@ -363,11 +424,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Jia, B. B., et al. (2016). <em>Health effect of forest bathing trip on elderly COPD.</em
-            > B&ES, 29(3), 212-218.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Jia, B. B., et al. (2016).
+            <em>Health effect of forest bathing trip on elderly COPD.</em>
+            <span>Biomedical and Environmental Sciences, 29(3), 212–218.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.3967/bes2016.026"
@@ -375,12 +438,19 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>Kaplan, R., & Kaplan, S. (1989). <em>The experience of nature.</em> Cambridge UP.</li>
-          <li>
-            Kotera, Y., Richardson, M., & Sheffield, D. (2020). <em>Effects of Shinrin-Yoku…</em>
-            IJMHA, 20, 337-361.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Kaplan, R., &amp; Kaplan, S. (1989).
+            <em>The experience of nature.</em>
+            <span>Cambridge University Press.</span>
+          </li>
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Kotera, Y., Richardson, M., &amp; Sheffield, D. (2020).
+            <em>Effects of Shinrin-Yoku.</em>
+            <span>International Journal of Mental Health and Addiction, 20, 337–361.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1007/s11469-020-00363-4"
@@ -388,11 +458,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Li, Q. (2010). <em>Effect of forest bathing trips on human immune function.</em>
-            EHPM, 15(1), 9-17.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Li, Q. (2010).
+            <em>Effect of forest bathing trips on human immune function.</em>
+            <span>Environmental Health and Preventive Medicine, 15(1), 9–17.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1007/s12199-008-0068-3"
@@ -400,10 +472,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Martin, L., et al. (2020). <em>Nature contact, connectedness and health.</em> JEP, 68, 101389.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Martin, L., et al. (2020).
+            <em>Nature contact, connectedness and health.</em>
+            <span>Journal of Environmental Psychology, 68, 101389.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1016/j.jenvp.2020.101389"
@@ -411,16 +486,34 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>Mental Health Foundation. (2016). <em>Fundamental facts about mental health.</em></li>
-          <li>WHO (2002). <em>Nations for mental health: Final report.</em></li>
-          <li>WHO (2013). <em>Mental health action plan 2013-2020.</em></li>
-          <li>
-            Miyazaki, Y. (2018). <em>Shinrin-yoku: The Japanese way…</em> Aster.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Mental Health Foundation. (2016).
+            <em>Fundamental facts about mental health.</em>
           </li>
-          <li>
-            Moher, D., et al. (2009). <em>PRISMA statement.</em> PLoS Med, 6(7), e1000097.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            World Health Organization. (2002).
+            <em>Nations for mental health: Final report.</em>
+          </li>
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            World Health Organization. (2013).
+            <em>Mental health action plan 2013–2020.</em>
+          </li>
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Miyazaki, Y. (2018).
+            <em>Shinrin-yoku: The Japanese way…</em>
+            <span>Aster.</span>
+          </li>
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Moher, D., et al. (2009).
+            <em>PRISMA statement.</em>
+            <span>PLoS Medicine, 6(7), e1000097.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1371/journal.pmed.1000097"
@@ -428,11 +521,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Park, B. J., et al. (2010). <em>Physiological effects of Shinrin-yoku…</em> EHPM, 15(1),
-            18-26.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Park, B. J., et al. (2010).
+            <em>Physiological effects of Shinrin-yoku…</em>
+            <span>Environmental Health and Preventive Medicine, 15(1), 18–26.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1007/s12199-009-0086-9"
@@ -440,11 +535,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Piff, P. K., et al. (2015). <em>Awe, the small self, and prosocial behavior.</em> JPSP, 108(6),
-            883-899.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Piff, P. K., et al. (2015).
+            <em>Awe, the small self, and prosocial behavior.</em>
+            <span>Journal of Personality and Social Psychology, 108(6), 883–899.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1037/pspi0000018"
@@ -452,10 +549,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Richardson, M., et al. (2016). <em>Joy and calm…</em> EPS, 2(4), 308-320.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Richardson, M., et al. (2016).
+            <em>Joy and calm…</em>
+            <span>Evolutionary Psychological Science, 2(4), 308–320.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1007/s40806-016-0065-5"
@@ -463,11 +563,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Shanahan, D. F., et al. (2016). <em>Health benefits from nature depend on dose.</em> Sci
-            Rep, 6, 28551.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Shanahan, D. F., et al. (2016).
+            <em>Health benefits from nature depend on dose.</em>
+            <span>Scientific Reports, 6, 28551.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1038/srep28551"
@@ -475,11 +577,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Wen, Y., et al. (2019). <em>Medical empirical research on Shinrin-yoku: A review.</em> EHPM,
-            24(1), 70.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Wen, Y., et al. (2019).
+            <em>Medical empirical research on Shinrin-yoku: A review.</em>
+            <span>Environmental Health and Preventive Medicine, 24(1), 70.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1186/s12199-019-0822-8"
@@ -487,10 +591,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Vermeesch, A. L., et al. (2024). <em>Shinrin-Yoku: scoping review…</em> GAIMH.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Vermeesch, A. L., et al. (2024).
+            <em>Shinrin-Yoku: scoping review…</em>
+            <span>GAIMH.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1177/27536130241231258"
@@ -498,11 +605,13 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-          <li>
-            Walsh, E., et al. (2018). <em>Brief mindfulness training reduces IL-6 y TNF-Î±…</em> JCCP,
-            86(2), 179-188.
+
+          <li class="pl-6 [text-indent:-1.5rem]">
+            Walsh, E., et al. (2018).
+            <em>Brief mindfulness training reduces IL-6 y TNF-α…</em>
+            <span>Journal of Consulting and Clinical Psychology, 86(2), 179–188.</span>
             <a
-              class="text-brand-700 hover:text-brand-800"
+              class="ml-2 font-medium text-brand-700 hover:text-brand-800"
               target="_blank"
               rel="noopener"
               href="https://doi.org/10.1037/ccp0000206"
@@ -510,7 +619,7 @@ import Layout from "~/layouts/BaseLayout.astro";
               DOI
             </a>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </section>
