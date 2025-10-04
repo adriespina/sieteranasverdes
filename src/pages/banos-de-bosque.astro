@@ -63,7 +63,7 @@ import Layout from "~/layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 2) Beneficios — Shinrin-Yoku (3 tarjetas arriba + 2 abajo, sin huecos) -->
+  <!-- 2) Beneficios — Shinrin-Yoku (3 tarjetas arriba + 2 abajo, galería lateral) -->
   <section id="beneficios" class="bg-brand-50 py-12 md:py-16">
     <div class="mx-auto grid max-w-6xl px-4 lg:grid-cols-12 lg:gap-12">
       <!-- Columna de texto/tarjetas -->
@@ -82,8 +82,8 @@ import Layout from "~/layouts/BaseLayout.astro";
           >
             <h3 class="text-xl font-semibold text-brand-900">Equilibrio general</h3>
             <p class="mt-2 leading-relaxed text-gray-700">
-              El Shinrin-Yoku favorece una homeostasis que armoniza las funciones corporales y
-              mentales.
+              El <em>Shinrin-Yoku</em> favorece una homeostasis que armoniza las funciones corporales
+              y mentales.
             </p>
           </li>
           <li
@@ -127,8 +127,8 @@ import Layout from "~/layouts/BaseLayout.astro";
         </ul>
       </div>
 
-      <!-- Columna de imágenes -->
-      <div class="lg:col-span-5" data-reveal>
+      <!-- Galería lateral -->
+      <div class="space-y-6 lg:col-span-5" data-reveal>
         <!-- Carrusel móvil -->
         <div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:hidden">
           <figure
@@ -145,7 +145,7 @@ import Layout from "~/layouts/BaseLayout.astro";
                 alt="Detalle de corteza húmeda"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover"
+                class="h-64 w-full object-cover"
               />
             </picture>
           </figure>
@@ -163,7 +163,7 @@ import Layout from "~/layouts/BaseLayout.astro";
                 alt="Paseo en silencio entre árboles"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover"
+                class="h-64 w-full object-cover"
               />
             </picture>
           </figure>
@@ -181,7 +181,7 @@ import Layout from "~/layouts/BaseLayout.astro";
                 alt="Respirar la atmósfera del bosque"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover"
+                class="h-64 w-full object-cover"
               />
             </picture>
           </figure>
@@ -199,7 +199,7 @@ import Layout from "~/layouts/BaseLayout.astro";
                 alt="Texturas, hojas y musgo"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover"
+                class="h-64 w-full object-cover"
               />
             </picture>
           </figure>
@@ -217,108 +217,62 @@ import Layout from "~/layouts/BaseLayout.astro";
                 alt="Luz filtrada entre las copas"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover"
+                class="h-64 w-full object-cover"
               />
             </picture>
           </figure>
         </div>
 
-        <!-- Collage desktop -->
-        <div class="sticky top-24 hidden sm:block">
-          <div class="aspect-[3/4]">
-            <div class="grid h-full w-full grid-cols-2 grid-rows-6 gap-4">
-              <figure
-                class="col-span-1 row-span-6 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
-              >
-                <picture>
-                  <source
-                    srcset="/img/banosbosqueseccion2-480.webp 480w, /img/banosbosqueseccion2-768.webp 768w, /img/banosbosqueseccion2-1080.webp 1080w, /img/banosbosqueseccion2-1600.webp 1600w"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/img/banosbosqueseccion2.jpeg"
-                    alt="Detalle de corteza húmeda"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                </picture>
-              </figure>
-              <figure
-                class="col-span-1 row-span-3 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
-              >
-                <picture>
-                  <source
-                    srcset="/img/banosbosqueseccion3-480.webp 480w, /img/banosbosqueseccion3-768.webp 768w, /img/banosbosqueseccion3-1080.webp 1080w, /img/banosbosqueseccion3-1600.webp 1600w"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/img/banosbosqueseccion3.jpeg"
-                    alt="Paseo en silencio entre árboles"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                </picture>
-              </figure>
-              <figure
-                class="col-span-1 row-span-2 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
-              >
-                <picture>
-                  <source
-                    srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/img/banosbosqueseccion4.jpeg"
-                    alt="Respirar la atmósfera del bosque"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                </picture>
-              </figure>
-              <figure
-                class="col-span-1 row-span-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
-              >
-                <picture>
-                  <source
-                    srcset="/img/banosbosqueseccion5-480.webp 480w, /img/banosbosqueseccion5-768.webp 768w, /img/banosbosqueseccion5-1080.webp 1080w, /img/banosbosqueseccion5-1600.webp 1600w"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/img/banosbosqueseccion5.jpeg"
-                    alt="Texturas, hojas y musgo"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                </picture>
-              </figure>
-              <figure
-                class="col-span-1 row-span-2 overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5"
-              >
-                <picture>
-                  <source
-                    srcset="/img/banosbosqueseccion6-480.webp 480w, /img/banosbosqueseccion6-768.webp 768w, /img/banosbosqueseccion6-1080.webp 1080w, /img/banosbosqueseccion6-1600.webp 1600w"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/img/banosbosqueseccion6.jpeg"
-                    alt="Luz filtrada entre las copas"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                </picture>
-              </figure>
-            </div>
-          </div>
+        <!-- Galería desktop -->
+        <div class="hidden gap-4 sm:grid">
+          <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion2-480.webp 480w, /img/banosbosqueseccion2-768.webp 768w, /img/banosbosqueseccion2-1080.webp 1080w, /img/banosbosqueseccion2-1600.webp 1600w"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion2.jpeg"
+                alt="Sendero cubierto de hojas"
+                loading="lazy"
+                decoding="async"
+                class="h-64 w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion4-480.webp 480w, /img/banosbosqueseccion4-768.webp 768w, /img/banosbosqueseccion4-1080.webp 1080w, /img/banosbosqueseccion4-1600.webp 1600w"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion4.jpeg"
+                alt="Respirar la atmósfera del bosque"
+                loading="lazy"
+                decoding="async"
+                class="h-64 w-full object-cover"
+              />
+            </picture>
+          </figure>
+          <figure class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <picture>
+              <source
+                srcset="/img/banosbosqueseccion6-480.webp 480w, /img/banosbosqueseccion6-768.webp 768w, /img/banosbosqueseccion6-1080.webp 1080w, /img/banosbosqueseccion6-1600.webp 1600w"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                type="image/webp"
+              />
+              <img
+                src="/img/banosbosqueseccion6.jpeg"
+                alt="Luz filtrada entre las copas"
+                loading="lazy"
+                decoding="async"
+                class="h-64 w-full object-cover"
+              />
+            </picture>
+          </figure>
         </div>
       </div>
     </div>
